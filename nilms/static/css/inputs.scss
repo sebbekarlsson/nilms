@@ -29,6 +29,11 @@
         background-color: $color_ok;
         color: white;
     }
+
+    &.btn-primary {
+        background-color: $color_primary;
+        color: white;
+    }
 }
 
 .input-text {

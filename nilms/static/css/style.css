@@ -257,6 +257,9 @@
   .btn.btn-ok {
     background-color: #67C54E;
     color: white; }
+  .btn.btn-primary {
+    background-color: #3989F0;
+    color: white; }
 
 .input-text {
   width: 100%;
