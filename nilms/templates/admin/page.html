@@ -1,0 +1,28 @@
+{% extends 'admin/layout_admin.html' %}
+
+
+{% block admin_content %}
+    <form method='POST' class='form'>
+        <div class='split' style='height: 100px; line-height: 100px;'>
+            <section class='centered-vertical'><h2>Unnamed</h2></section>
+            <section class='from-right'>
+                <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
+            </section>
+        </div>
+        <div class='page-info'>
+            <label for='page-name'>
+                <p>Name</p>
+                <input type='text' name='page-name' class='input-text' value='Unnamed'/>
+            </label>
+            <label for='page-template'>
+                <p>Template</p>
+                <select name='page-template'>
+                    <option value='products.html'>products.html</option>
+                    <option value='1234.html'>1234.html</option>
+                    <option value='abc.html'>abc.html</option>
+                    <option value='0.html'>0.html</option>
+                </select>
+            </label>
+        </div>
+    </form>
+{% endblock %}

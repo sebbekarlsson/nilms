@@ -12,14 +12,47 @@
     padding-left: 2rem;
     padding-right: 2rem;
     @include font-default();
+    font-size: 100%;
+    border: none;
+    outline: none;
     background-color: $color_light_text;
     color: black;
     border-radius: 8px;
     font-weight: 200;
     vertical-align: middle;
 
+    &:hover {
+        cursor: pointer;
+    }
+
     &.btn-ok {
         background-color: $color_ok;
         color: white;
+    }
+}
+
+.input-text {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    border-bottom-style: solid;
+    border-bottom-color: $color_primary;
+    border-bottom-width: 1px;
+    @include font-default();
+    font-size: 100%;
+}
+
+.form {
+    label {
+        display: block;
+        margin-bottom: 1rem;
+
+        p {
+            font-weight: 500;
+        }
     }
 }

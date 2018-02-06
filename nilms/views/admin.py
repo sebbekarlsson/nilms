@@ -24,6 +24,11 @@ def show_pages():
     return render_template('admin/pages.html')
 
 
+@bp.route('/page')
+def show_page():
+    return render_template('admin/page.html')
+
+
 @bp.route('/settings')
 def show_settings():
     return render_template('admin/settings.html')

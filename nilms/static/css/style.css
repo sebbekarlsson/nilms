@@ -166,6 +166,11 @@
       padding: 1rem;
       font-family: 'Roboto', sans-serif; }
 
+.page-info {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1rem; }
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -239,14 +244,39 @@
   padding-left: 2rem;
   padding-right: 2rem;
   font-family: 'Roboto', sans-serif;
+  font-size: 100%;
+  border: none;
+  outline: none;
   background-color: #D2D2D2;
   color: black;
   border-radius: 8px;
   font-weight: 200;
   vertical-align: middle; }
+  .btn:hover {
+    cursor: pointer; }
   .btn.btn-ok {
     background-color: #67C54E;
     color: white; }
+
+.input-text {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+  border-bottom-style: solid;
+  border-bottom-color: #3989F0;
+  border-bottom-width: 1px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%; }
+
+.form label {
+  display: block;
+  margin-bottom: 1rem; }
+  .form label p {
+    font-weight: 500; }
 
 * {
   margin: 0;
