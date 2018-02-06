@@ -3,7 +3,7 @@ from nilms.app import app
 import flask_assets
 
 
-STATIC_DIR = '/nilms/static'
+STATIC_DIR = 'nilms/static'
 
 
 def run():

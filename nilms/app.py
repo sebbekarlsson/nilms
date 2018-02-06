@@ -1,5 +1,6 @@
 from nilms.mongo import db
 from nilms.views.index import bp as index_bp
+from nilms.views.admin import bp as admin_bp
 from flask import Flask
 
 
@@ -11,5 +12,6 @@ app.config.update(
 )
 
 app.register_blueprint(index_bp)
+app.register_blueprint(admin_bp)
 
 db = db
