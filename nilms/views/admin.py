@@ -22,3 +22,8 @@ def show_dashboard():
 @bp.route('/pages')
 def show_pages():
     return render_template('admin/pages.html')
+
+
+@bp.route('/settings')
+def show_settings():
+    return render_template('admin/settings.html')
