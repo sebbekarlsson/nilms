@@ -20,6 +20,7 @@ def run():
         env.register(
             'js_all',
             flask_assets.Bundle(
+                'medium-editor.min.js',
                 'utils.js',
                 'app.js',
                 filters=['jsmin'],
