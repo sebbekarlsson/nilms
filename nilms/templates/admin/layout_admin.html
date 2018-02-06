@@ -34,7 +34,7 @@
         </div>
         <div class='view-admin-bottom'>
             <div class='view-admin-menu'>
-                <a href='/admin/dashboard' data-selected='1' class='menu-item'>
+                <a href='/admin/dashboard' {% if 'dashboard' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
                     <div class='menu-item-indicator'>
                     </div>
                     <div class='menu-item-icon-holder'>
@@ -44,7 +44,7 @@
                         dashboard
                     </div>
                 </a>
-                <a href='/admin/pages' class='menu-item'>
+                <a href='/admin/pages' {% if 'pages' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
                     <div class='menu-item-indicator'>
                     </div>
                     <div class='menu-item-icon-holder'>
@@ -54,7 +54,7 @@
                         pages
                     </div>
                 </a>
-                <a href='/admin/settings' class='menu-item'>
+                <a href='/admin/settings' {% if 'settings' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
                     <div class='menu-item-indicator'>
                     </div>
                     <div class='menu-item-icon-holder'>
