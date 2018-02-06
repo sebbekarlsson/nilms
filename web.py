@@ -10,7 +10,6 @@ def run():
     try:
         env = flask_assets.Environment(app)
 
-        # Tell flask-assets where to look for our coffeescript and sass files.
         env.load_path = [
             os.path.join(os.path.dirname(__file__), '{STATIC_DIR}/js'.format(
                 STATIC_DIR=STATIC_DIR
