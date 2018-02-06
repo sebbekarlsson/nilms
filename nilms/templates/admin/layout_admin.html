@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+
+{% block head %}
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+    rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class='view-admin'>
+        <div class='view-admin-top'>
+            <div class='view-admin-top-section'>
+                <h2>Brand</h2>
+            </div>
+            <div class='view-admin-top-section'>
+                <a href='#' class='menu-item'>
+                    menu
+                </a>
+                <a href='#' class='menu-item'>
+                    search
+                </a>
+            </div>
+            <div class='view-admin-top-section'>
+                <a href='/admin/user' class='menu-item'>
+                    <div class='menu-item-circle' style='background-image: url({{ url_for('static', filename='image/avatar.jpg') }});'>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class='view-admin-bottom'>
+            <div class='view-admin-menu'>
+                <a href='/admin/dashboard' data-selected='1' class='menu-item'>
+                    <div class='menu-item-indicator'>
+                    </div>
+                    <div class='menu-item-icon-holder'>
+                        <i class='material-icons'>dashboard</i>
+                    </div>
+                    <div class='menu-item-text'>
+                        dashboard
+                    </div>
+                </a>
+                <a href='/admin/pages' class='menu-item'>
+                    <div class='menu-item-indicator'>
+                    </div>
+                    <div class='menu-item-icon-holder'>
+                        <i class='material-icons'>web</i>
+                    </div>
+                    <div class='menu-item-text'>
+                        pages
+                    </div>
+                </a>
+                <a href='/admin/settings' class='menu-item'>
+                    <div class='menu-item-indicator'>
+                    </div>
+                    <div class='menu-item-icon-holder'>
+                        <i class='material-icons'>settings</i>
+                    </div>
+                    <div class='menu-item-text'>
+                        settings
+                    </div>
+                </a>
+            </div>
+            <div class='view-admin-content'>
+                {% block admin_content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

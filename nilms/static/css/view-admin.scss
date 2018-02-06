@@ -1,0 +1,133 @@
+@import 'mixins.scss';
+@import 'variables.scss';
+
+
+.view-admin {
+    min-height: 100vh;
+    width: 100%;
+    @include display-flex();
+    flex-direction: column;
+
+    .view-admin-top {
+        height: 64px;
+        background-color: white;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: $color_light_text;
+        @include display-flex();
+        flex-direction: row;
+
+        .view-admin-top-section {
+            @include font-default();
+
+            &:nth-child(1) {
+                width: 20%;
+                @include display-flex();
+                justify-content: center;
+                align-items: center;
+            }
+
+            &:nth-child(2) {
+                flex: 1;
+                @include display-flex();
+                flex-direction: row;
+                justify-content: flex-begin;
+            }
+
+            &:nth-child(3) {
+                width: 20%;
+                @include display-flex();
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .menu-item {
+                @include display-flex();
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                box-sizing: border-box;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                color: black;
+                transition: .2s;
+
+                &:hover {
+                    background-color: $color_primary_light;
+                    color: $color_primary;
+                    transition: .2s;
+                }
+            }
+
+            .menu-item-circle {
+                width: 32px;
+                height: 32px;
+                display: block;
+                border-radius: 32px;
+                background-size: 100%;
+                background-size: cover;
+            }
+        }
+    }
+
+    .view-admin-bottom {
+        flex: 1;
+        @include display-flex();
+        flex-direction: row;
+
+        .view-admin-menu {
+            width: 20%;
+            background-color: white;
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-right-color: $color_light_text;
+
+            .menu-item {
+                @include display-flex();
+                flex-direction: row;
+                height: 64px;
+                text-decoration: none;
+                color: black;
+                transition: .2s;
+
+                .menu-item-indicator {
+                    display: none;
+                    width: 8px;
+                    background-color: $color_primary;
+                }
+
+                .menu-item-icon-holder {
+                    @include display-flex();
+                    justify-content: center;
+                    align-items: center;
+                    width: 20%;
+                }
+
+                .menu-item-text {
+                    @include display-flex();
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding-left: 1rem;
+                    flex: 1;
+                    @include font-default();
+                    text-transform: capitalize;
+                }
+
+                &[data-selected='1'], &:hover {
+                    color: $color_primary;
+                    background-color: $color_primary_light;
+                    transition: .2s;
+
+                    .menu-item-indicator {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .view-admin-content {
+            flex: 1;
+            background-color: $color_light;
+        }
+    }
+}

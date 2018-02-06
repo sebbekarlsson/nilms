@@ -1,0 +1,192 @@
+.view-admin {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  flex-direction: column; }
+  .view-admin .view-admin-top {
+    height: 64px;
+    background-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #D2D2D2;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    flex-direction: row; }
+    .view-admin .view-admin-top .view-admin-top-section {
+      font-family: 'Roboto', sans-serif; }
+      .view-admin .view-admin-top .view-admin-top-section:nth-child(1) {
+        width: 20%;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        justify-content: center;
+        align-items: center; }
+      .view-admin .view-admin-top .view-admin-top-section:nth-child(2) {
+        flex: 1;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        flex-direction: row;
+        justify-content: flex-begin; }
+      .view-admin .view-admin-top .view-admin-top-section:nth-child(3) {
+        width: 20%;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        flex-direction: row;
+        justify-content: flex-end; }
+      .view-admin .view-admin-top .view-admin-top-section .menu-item {
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        box-sizing: border-box;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        color: black;
+        transition: .2s; }
+        .view-admin .view-admin-top .view-admin-top-section .menu-item:hover {
+          background-color: #E9F3FE;
+          color: #3989F0;
+          transition: .2s; }
+      .view-admin .view-admin-top .view-admin-top-section .menu-item-circle {
+        width: 32px;
+        height: 32px;
+        display: block;
+        border-radius: 32px;
+        background-size: 100%;
+        background-size: cover; }
+  .view-admin .view-admin-bottom {
+    flex: 1;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    flex-direction: row; }
+    .view-admin .view-admin-bottom .view-admin-menu {
+      width: 20%;
+      background-color: white;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-right-color: #D2D2D2; }
+      .view-admin .view-admin-bottom .view-admin-menu .menu-item {
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        flex-direction: row;
+        height: 64px;
+        text-decoration: none;
+        color: black;
+        transition: .2s; }
+        .view-admin .view-admin-bottom .view-admin-menu .menu-item .menu-item-indicator {
+          display: none;
+          width: 8px;
+          background-color: #3989F0; }
+        .view-admin .view-admin-bottom .view-admin-menu .menu-item .menu-item-icon-holder {
+          display: -webkit-box;
+          /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+          display: -ms-flexbox;
+          /* TWEENER - IE 10 */
+          display: -webkit-flex;
+          /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+          display: flex;
+          /* NEW, Spec - Firefox, Chrome, Opera */
+          justify-content: center;
+          align-items: center;
+          width: 20%; }
+        .view-admin .view-admin-bottom .view-admin-menu .menu-item .menu-item-text {
+          display: -webkit-box;
+          /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+          display: -ms-flexbox;
+          /* TWEENER - IE 10 */
+          display: -webkit-flex;
+          /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+          display: flex;
+          /* NEW, Spec - Firefox, Chrome, Opera */
+          align-items: center;
+          box-sizing: border-box;
+          padding-left: 1rem;
+          flex: 1;
+          font-family: 'Roboto', sans-serif;
+          text-transform: capitalize; }
+        .view-admin .view-admin-bottom .view-admin-menu .menu-item[data-selected='1'], .view-admin .view-admin-bottom .view-admin-menu .menu-item:hover {
+          color: #3989F0;
+          background-color: #E9F3FE;
+          transition: .2s; }
+          .view-admin .view-admin-bottom .view-admin-menu .menu-item[data-selected='1'] .menu-item-indicator, .view-admin .view-admin-bottom .view-admin-menu .menu-item:hover .menu-item-indicator {
+            display: block; }
+    .view-admin .view-admin-bottom .view-admin-content {
+      flex: 1;
+      background-color: #F3F7FA; }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+/*# sourceMappingURL=style.css.map */
