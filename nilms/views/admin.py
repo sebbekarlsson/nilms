@@ -17,3 +17,8 @@ def show():
 @bp.route('/dashboard')
 def show_dashboard():
     return render_template('admin/dashboard.html')
+
+
+@bp.route('/pages')
+def show_pages():
+    return render_template('admin/pages.html')

@@ -1,5 +1,12 @@
 @import 'view-admin.scss';
 @import 'material-icons.scss';
+@import 'table.scss';
+@import 'positioning.scss';
+@import 'inputs.scss';
 
 
 * { margin: 0; padding: 0; }
+
+.push-down {
+    margin-top: 1rem;
+}

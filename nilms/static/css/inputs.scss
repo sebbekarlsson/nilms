@@ -1,0 +1,25 @@
+@import 'mixins.scss';
+@import 'variables.scss';
+
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    min-width: 100px;
+    height: 42px;
+    line-height: 42px;
+    box-sizing: border-box;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include font-default();
+    background-color: $color_light_text;
+    color: black;
+    border-radius: 8px;
+    font-weight: 200;
+    vertical-align: middle;
+
+    &.btn-ok {
+        background-color: $color_ok;
+        color: white;
+    }
+}

@@ -161,7 +161,10 @@
             display: block; }
     .view-admin .view-admin-bottom .view-admin-content {
       flex: 1;
-      background-color: #F3F7FA; }
+      background-color: #F3F7FA;
+      box-sizing: border-box;
+      padding: 1rem;
+      font-family: 'Roboto', sans-serif; }
 
 .material-icons {
   font-family: 'Material Icons';
@@ -185,8 +188,71 @@
   /* Support for IE. */
   font-feature-settings: 'liga'; }
 
+.table {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left; }
+  .table th, .table td {
+    box-sizing: border-box;
+    padding: 1rem; }
+  .table tr {
+    background-color: white;
+    border-bottom-color: #F3F7FA;
+    border-bottom-style: solid;
+    border-bottom-width: 4px; }
+
+.split {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  flex-direction: row; }
+  .split section {
+    flex: 1; }
+
+.from-right {
+  text-align: right; }
+
+.centered-vertical {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center; }
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  min-width: 100px;
+  height: 42px;
+  line-height: 42px;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #D2D2D2;
+  color: black;
+  border-radius: 8px;
+  font-weight: 200;
+  vertical-align: middle; }
+  .btn.btn-ok {
+    background-color: #67C54E;
+    color: white; }
+
 * {
   margin: 0;
   padding: 0; }
+
+.push-down {
+  margin-top: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

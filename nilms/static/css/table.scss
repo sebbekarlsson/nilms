@@ -1,0 +1,22 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+
+.table {
+    @include font-default();
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    th, td {
+        box-sizing: border-box;
+        padding: 1rem;
+    }
+
+    tr {
+        background-color: white;
+        border-bottom-color: $color_light;
+        border-bottom-style: solid;
+        border-bottom-width: 4px;
+    }
+}

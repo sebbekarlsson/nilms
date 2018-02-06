@@ -1,0 +1,30 @@
+{% extends 'admin/layout_admin.html' %}
+
+
+{% block admin_content %}
+    <div class='split' style='height: 100px; line-height: 100px;'>
+        <section class='centered-vertical'><h2>Pages</h2></section>
+        <section class='from-right'>
+            <a href='/admin/page' class='btn btn-ok'>Create Page</a>
+        </section>
+    </div>
+
+    <table class='table push-down'>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>template</th>
+                <th>id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(0, 20) %}
+                <tr>
+                    <td>my page</td>
+                    <td>products.html</td>
+                    <td>12903901asaa09939023</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
