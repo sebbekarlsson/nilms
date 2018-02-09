@@ -12,7 +12,10 @@ class UserFacade(object):
 
     @staticmethod
     def get(**kwargs):
-        return User.objects.get(**kwargs)
+        try:
+            return User.objects.get(**kwargs)
+        except DoesNotExist:
+            return None
 
     @staticmethod
     def get_all():
