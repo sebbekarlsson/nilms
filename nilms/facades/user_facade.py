@@ -1,9 +1,9 @@
-from podmosphere.entities.page import Page
+from podmosphere.entities.page import User
 from mongoengine.queryset import DoesNotExist
 from nilms.mongo import db
 
 
-class PageFacade(object):
+class UserFacade(object):
     @staticmethod
     def get_by_ids(ids):
         return db.page.find({
@@ -12,15 +12,15 @@ class PageFacade(object):
 
     @staticmethod
     def get(**kwargs):
-        return Page.objects.get(**kwargs)
+        return User.objects.get(**kwargs)
 
     @staticmethod
     def get_all():
-        return Page.objects().order_by('name')
+        return User.objects().order_by('name')
 
     @staticmethod
     def create(**kwargs):
-        c = Page(**kwargs)
+        c = User(**kwargs)
         c.save()
 
         return c
@@ -28,6 +28,6 @@ class PageFacade(object):
     @staticmethod
     def exists(**kwargs):
         try:
-            return Page.objects.get(**kwargs) is not None
+            return User.objects.get(**kwargs) is not None
         except DoesNotExist:
             return False
