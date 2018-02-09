@@ -1,4 +1,4 @@
-from podmosphere.entities.page import Page
+from nilms.entities.page import Page
 from mongoengine.queryset import DoesNotExist
 from nilms.mongo import db
 

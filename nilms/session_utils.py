@@ -17,6 +17,6 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if not get_current_user():
-            return redirect('/login')
+            return redirect('/admin/login')
         return f(*args, **kwargs)
     return decorated_function
