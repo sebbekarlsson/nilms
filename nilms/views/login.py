@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, session, redirect
 from nilms.facades.user_facade import UserFacade
 from nilms.password import check_password
 
@@ -29,4 +29,18 @@ def login():
             if not check_password(existing['password'], password):
                 errors.append(err_wrong_cred)
 
+        if not len(errors):
+            session['user_id'] = str(existing.id)
+
+            return redirect('/admin')
+
     return render_template('admin/login.html', errors=errors)
+
+
+@bp.route('/logout', methods=['POST', 'GET'])
+def logout():
+    if 'user_id' in session:
+        session['user_id'] = None
+        del session['user_id']
+
+    return redirect('/admin/login')

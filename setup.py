@@ -17,6 +17,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
+            'nilms-init = nilms.initialize:init'
         ]
     }
 )
