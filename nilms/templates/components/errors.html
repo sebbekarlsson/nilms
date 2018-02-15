@@ -1,0 +1,7 @@
+{% if errors %}
+    <div class='form-errors push-down'>
+        {% for error in errors %}
+            <div class='form-errors-error'>{{ error }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
