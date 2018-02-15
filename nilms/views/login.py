@@ -9,6 +9,6 @@ bp = Blueprint(
 )
 
 
-@bp.route('/login')
+@bp.route('/login', methods=['POST', 'GET'])
 def login():
     return render_template('admin/login.html')
