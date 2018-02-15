@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template  # , render_template, redirect
+from flask import Blueprint, render_template, request
 
 
 bp = Blueprint(
@@ -11,4 +11,10 @@ bp = Blueprint(
 
 @bp.route('/login', methods=['POST', 'GET'])
 def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        return str((username, password))
+
     return render_template('admin/login.html')
