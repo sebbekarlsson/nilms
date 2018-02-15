@@ -108,11 +108,45 @@
         padding-left: 1rem;
         padding-right: 1rem;
         color: black;
-        transition: .2s; }
+        transition: .2s;
+        position: relative; }
+        .view-admin .view-admin-top .view-admin-top-section .menu-item .menu-item-dropdown {
+          display: none;
+          position: absolute;
+          right: 0;
+          top: 64px;
+          min-width: 150px;
+          background-color: white;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+          .view-admin .view-admin-top .view-admin-top-section .menu-item .menu-item-dropdown ul {
+            display: block;
+            width: 100%;
+            list-style: none; }
+            .view-admin .view-admin-top .view-admin-top-section .menu-item .menu-item-dropdown ul li {
+              display: block;
+              width: 100%; }
+              .view-admin .view-admin-top .view-admin-top-section .menu-item .menu-item-dropdown ul li a {
+                display: block;
+                text-decoration: none;
+                height: 32px;
+                line-height: 32px;
+                box-sizing: border-box;
+                padding-right: 0.5rem;
+                transition: .2s;
+                color: black;
+                text-align: right; }
+                .view-admin .view-admin-top .view-admin-top-section .menu-item .menu-item-dropdown ul li a i {
+                  vertical-align: middle;
+                  margin-left: 1rem; }
+                .view-admin .view-admin-top .view-admin-top-section .menu-item .menu-item-dropdown ul li a:hover {
+                  transition: .2s;
+                  background-color: #E9F3FE; }
         .view-admin .view-admin-top .view-admin-top-section .menu-item:hover {
           background-color: #E9F3FE;
           color: #3989F0;
           transition: .2s; }
+          .view-admin .view-admin-top .view-admin-top-section .menu-item:hover .menu-item-dropdown {
+            display: block; }
       .view-admin .view-admin-top .view-admin-top-section .menu-item-circle {
         width: 32px;
         height: 32px;

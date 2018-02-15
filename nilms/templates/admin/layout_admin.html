@@ -26,10 +26,15 @@
                 </a>
             </div>
             <div class='view-admin-top-section'>
-                <a href='/admin/user' class='menu-item'>
+                <div class='menu-item'>
                     <div class='menu-item-circle' style='background-image: url({{ url_for('static', filename='image/avatar.jpg') }});'>
                     </div>
-                </a>
+                    <div class='menu-item-dropdown'>
+                        <ul>
+                            <li><a href='/admin/logout'>Logout<i class='material-icons'>exit_to_app</i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div class='view-admin-bottom'>
@@ -62,17 +67,6 @@
                     </div>
                     <div class='menu-item-text'>
                         settings
-                    </div>
-                </a>
-                <!-- logout should be added to top menu under user avatar later -->
-                <a href='/admin/logout' {% if 'logout' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
-                    <div class='menu-item-indicator'>
-                    </div>
-                    <div class='menu-item-icon-holder'>
-                        <i class='material-icons'>exit_to_app</i>
-                    </div>
-                    <div class='menu-item-text'>
-                        logout
                     </div>
                 </a>
             </div>
