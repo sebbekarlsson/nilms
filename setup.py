@@ -9,7 +9,8 @@ setup(
         'flask_assets',
         'pymongo',
         'mongoengine',
-        'jsmin'
+        'jsmin',
+        'bcrypt'
     ],
     packages=[
         'nilms'
