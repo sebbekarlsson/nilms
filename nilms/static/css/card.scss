@@ -1,0 +1,6 @@
+@import 'mixins.scss';
+
+
+.card {
+    @include shadow-2;
+}

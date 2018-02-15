@@ -3,6 +3,19 @@
 
 {% block body %}
     <div class='view-login'>
-        <h1>Login</h1>
+        <div class='card login-card'>
+            <form class='form' method='POST'>
+                <h2>Login</h2>
+                <label class='push-down' for='username'>
+                    <p>username</p>
+                    <input type='text' class='input-text' name='username'/>
+                </label>
+                <label for='password'>
+                    <p>password</p>
+                    <input type='password' class='input-text' name='password'/>
+                </label>
+                <input type='submit' class='btn btn-ok' value='Login'/>
+            </form>
+        </div>
     </div>
 {% endblock %}
