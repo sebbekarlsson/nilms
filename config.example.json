@@ -1,4 +1,5 @@
 {
     "username": "admin",
-    "password": "bad_password"
+    "password": "bad_password",
+    "theme_dir": "/path/to/theme"
 }
