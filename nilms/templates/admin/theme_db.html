@@ -12,6 +12,7 @@
         <div class='page-info'>
             {% for k, v in db.items() %}
                 <label for='{{ k }}'>
+                    <p>{{ k }}</p>
                     <input type='text' class='input-text' name='{{ k }}' value='{{ v }}'/>
                 </label>
             {% endfor %}
