@@ -2,6 +2,7 @@ from flask import Blueprint
 from nilms.facades.page_facade import PageFacade
 from nilms.config import config
 from nilms.theme_utils import get_theme_db
+from nilms.editing_utils import admin_navigation
 from jinja2 import Environment, FileSystemLoader
 import os
 
@@ -21,6 +22,8 @@ def show(page_name):
     env = Environment(
         loader=FileSystemLoader(os.path.join(config['theme_dir'], 'templates'))
     )
+
+    env.globals.update(admin_navigation=admin_navigation)
 
     j_template = env.get_template(page.template)
 
