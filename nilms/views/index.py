@@ -16,6 +16,8 @@ def show(page_name):
     page = PageFacade.get(name=page_name) if page_name\
         else PageFacade.get(is_startpage=True)
 
+    pages = PageFacade.get_all()
+
     if not page:
         return 'page not found', 404
 
@@ -27,4 +29,4 @@ def show(page_name):
 
     j_template = env.get_template(page.template)
 
-    return j_template.render(db=get_theme_db(), page=page)
+    return j_template.render(db=get_theme_db(), page=page, pages=pages)
