@@ -5,7 +5,7 @@
 ## Installation
 > First, let us create a config file:
 
-    cp config.example.json
+    cp config.example.json config.json
 
 > Edit it using your favourite editor.
 
