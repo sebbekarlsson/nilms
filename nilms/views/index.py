@@ -1,6 +1,7 @@
 from flask import Blueprint
 from nilms.facades.page_facade import PageFacade
 from nilms.config import config
+from nilms.theme_utils import get_theme_db
 from jinja2 import Environment, FileSystemLoader
 import os
 
@@ -23,4 +24,4 @@ def show(page_name):
 
     j_template = env.get_template(page.template)
 
-    return j_template.render()
+    return j_template.render(db=get_theme_db())

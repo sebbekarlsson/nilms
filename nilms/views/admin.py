@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, request
 from bson.objectid import ObjectId
 from nilms.session_utils import login_required
-from nilms.theme_utils import get_theme_templates
+from nilms.theme_utils import get_theme_templates, get_theme_db, set_theme_db
 from nilms.facades.page_facade import PageFacade
 
 
@@ -67,7 +67,19 @@ def show_page(page_id):
 @bp.route('/theme-db', methods=['POST', 'GET'])
 @login_required
 def show_theme_db():
-    return render_template('admin/theme_db.html')
+    db = get_theme_db()
+
+    if request.method == 'POST':
+        if request.form.get('submit'):
+            for k, v in request.form.items():
+                if k == 'submit':
+                    continue
+
+                db[k] = v
+
+            set_theme_db(db)
+
+    return render_template('admin/theme_db.html', db=db)
 
 
 @bp.route('/settings')

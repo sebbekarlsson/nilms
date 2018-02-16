@@ -40,3 +40,16 @@ def get_theme_db():
         pass
 
     return db
+
+
+def set_theme_db(db):
+    file_path = os.path.join(config['theme_dir'], 'db.json')
+
+    try:
+        with open(file_path, 'w+') as _file:
+            _file.write(json.dumps(db))
+        _file.close()
+    except ValueError:
+        pass
+
+    return db

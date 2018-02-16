@@ -2,5 +2,19 @@
 
 
 {% block admin_content %}
-    <h2>Theme db</h2>
+    <form method='POST' class='form'>
+        <div class='split' style='height: 100px; line-height: 100px;'>
+            <section class='centered-vertical'><h2>Theme Database</h2></section>
+            <section class='from-right'>
+                <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
+            </section>
+        </div>
+        <div class='page-info'>
+            {% for k, v in db.items() %}
+                <label for='{{ k }}'>
+                    <input type='text' class='input-text' name='{{ k }}' value='{{ v }}'/>
+                </label>
+            {% endfor %}
+        </div>
+    </form>
 {% endblock %}
