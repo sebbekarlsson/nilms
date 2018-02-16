@@ -18,10 +18,9 @@
             <label for='page-template'>
                 <p>Template</p>
                 <select name='page-template'>
-                    <option value='products.html'>products.html</option>
-                    <option value='1234.html'>1234.html</option>
-                    <option value='abc.html'>abc.html</option>
-                    <option value='0.html'>0.html</option>
+                    {% for template in templates %}
+                        <option value='{{ template.name }}'>{{ template.name }}</option>
+                    {% endfor %}
                 </select>
             </label>
         </div>

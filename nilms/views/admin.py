@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect
 from nilms.session_utils import login_required
+from nilms.theme_utils import get_theme_templates
 
 
 bp = Blueprint(
@@ -31,7 +32,9 @@ def show_pages():
 @bp.route('/page')
 @login_required
 def show_page():
-    return render_template('admin/page.html')
+    templates = get_theme_templates()
+
+    return render_template('admin/page.html', templates=templates)
 
 
 @bp.route('/settings')
