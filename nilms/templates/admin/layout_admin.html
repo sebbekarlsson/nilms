@@ -59,6 +59,16 @@
                         pages
                     </div>
                 </a>
+                <a href='/admin/theme-db' {% if 'theme-db' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
+                    <div class='menu-item-indicator'>
+                    </div>
+                    <div class='menu-item-icon-holder'>
+                        <i class='material-icons'>storage</i>
+                    </div>
+                    <div class='menu-item-text'>
+                        Theme Database
+                    </div>
+                </a>
                 <a href='/admin/settings' {% if 'settings' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
                     <div class='menu-item-indicator'>
                     </div>

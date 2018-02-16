@@ -64,6 +64,12 @@ def show_page(page_id):
     return render_template('admin/page.html', templates=templates, page=page)
 
 
+@bp.route('/theme-db', methods=['POST', 'GET'])
+@login_required
+def show_theme_db():
+    return render_template('admin/theme_db.html')
+
+
 @bp.route('/settings')
 @login_required
 def show_settings():
