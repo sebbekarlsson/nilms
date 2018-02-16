@@ -15,3 +15,9 @@ def get_theme_templates():
             for path in glob.glob(query)]
 
     return []
+
+
+def get_template_path(name):
+    for template in get_theme_templates():
+        if template['name'] == name:
+            return template['path']
