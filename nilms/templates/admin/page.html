@@ -6,7 +6,9 @@
         <div class='split' style='height: 100px; line-height: 100px;'>
             <section class='centered-vertical'><h2>{{ page.name if page }}</h2></section>
             <section class='from-right'>
-                <a href='#' class='btn btn-primary'>Edit on site</a>
+                {% if page %}
+                    <a href='/{{ page.name }}' class='btn btn-primary'>Edit on site</a>
+                {% endif %}
                 <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
             </section>
         </div>
