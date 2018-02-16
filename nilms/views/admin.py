@@ -41,6 +41,10 @@ def show_page(page_id):
     templates = get_theme_templates()
 
     if request.method == 'POST':
+        if request.form.get('delete'):
+            page.delete()
+            return redirect('/admin/pages')
+
         if request.form.get('submit'):
             name = request.form.get('page-name')
             template = request.form.get('page-template')

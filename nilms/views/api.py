@@ -16,13 +16,8 @@ def update_page(page_id):
     if request.method == 'POST':
         query_object = request.get_json()
 
-        key = query_object['key']
-        value = query_object['value']
-
         kwargs = {
-            'data': {
-                key: value
-            }
+            'data': query_object
         }
 
         page = PageFacade.get(id=ObjectId(page_id))

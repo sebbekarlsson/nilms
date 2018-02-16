@@ -53,20 +53,19 @@ document.addEventListener('DOMContentLoaded', function(e) {
     });
 
     saveButton.addEventListener('click', function(e) {
+        query = {};
 
         for (var i = 0; i < fields.length; i++) {
             var field = fields[i];
-
-            wpost(
-                '/api/page/update/' + page_id,
-                {
-                    'key': field.getAttribute('id'),
-                    'value': field.innerText
-                },
-                function(data) {
-                    console.log(data);
-                }
-            );
+            query[field.getAttribute('id')] = field.innerText;
         }
+
+        wpost(
+            '/api/page/update/' + page_id,
+            query,
+            function(data) {
+                console.log(data);
+            }
+        );
     });
 });
