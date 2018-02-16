@@ -1,4 +1,6 @@
-from flask import Blueprint
+from flask import Blueprint, request, jsonify
+from nilms.facades.page_facade import PageFacade
+from bson.objectid import ObjectId
 
 
 bp = Blueprint(
@@ -9,7 +11,29 @@ bp = Blueprint(
 )
 
 
-@bp.route('/page/<page_id>/<action>', methods=['POST', 'GET'])
-@bp.route('/page', defaults={'page_id': None, 'action': None})
-def show_page(page_id, action):
-    return 'not implemented'
+@bp.route('/page/update/<page_id>', methods=['POST', 'GET'])
+def update_page(page_id):
+    if request.method == 'POST':
+        query_object = request.get_json()
+
+        key = query_object['key']
+        value = query_object['value']
+
+        kwargs = {
+            'data': {
+                key: value
+            }
+        }
+
+        page = PageFacade.get(id=ObjectId(page_id))
+        page.update(**kwargs)
+        page = PageFacade.get(id=ObjectId(page_id))
+
+        return jsonify(page.data)
+
+
+@bp.route('/page/data/<page_id>')
+def show_page(page_id):
+    page = PageFacade.get(id=ObjectId(page_id))
+
+    return jsonify(page.data)

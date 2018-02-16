@@ -27,4 +27,4 @@ def show(page_name):
 
     j_template = env.get_template(page.template)
 
-    return j_template.render(db=get_theme_db())
+    return j_template.render(db=get_theme_db(), page=page)

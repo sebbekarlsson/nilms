@@ -15,7 +15,7 @@
         <title>{{ db['title'] }}</title>
     </head>
     <body>
-        {{ admin_navigation() }}
+        {{ admin_navigation(page.id) }}
         {% block body %}
         {% endblock %}
     </body>

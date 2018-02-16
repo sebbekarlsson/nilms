@@ -1,8 +1,13 @@
-<style type='text/css'>{% include 'editing/admin_navigation.css' %}</style>
+<input type='hidden' name='page_id' value='{{ page_id }}'/>
+<style type='text/css'>
+{% include 'editing/medium-editor.min.css' %}
+{% include 'editing/admin_navigation.css' %}
+</style>
 <nav class='admin-navigation-editing'>
     <a href='/admin' class='admin-navigation-editing-item'>admin</a>
     <div id='admin-save' class='admin-navigation-editing-item'>save</div>
 </nav>
 <script type='text/javascript'>
+    {% include 'editing/medium-editor.min.js' %}
     {% include 'editing/editing.js' %}        
 </script>
