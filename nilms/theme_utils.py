@@ -2,6 +2,7 @@ from nilms.config import config
 import os
 import glob
 import ntpath
+import json
 
 
 def get_theme_templates():
@@ -21,3 +22,21 @@ def get_template_path(name):
     for template in get_theme_templates():
         if template['name'] == name:
             return template['path']
+
+
+def get_theme_db():
+    file_path = os.path.join(config['theme_dir'], 'db.json')
+
+    if not os.path.isfile(file_path):
+        return None
+
+    db = {}
+
+    try:
+        with open(file_path) as _file:
+            db = json.loads(_file.read())
+        _file.close()
+    except ValueError:
+        pass
+
+    return db

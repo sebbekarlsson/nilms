@@ -14,6 +14,7 @@
             <tr>
                 <th>name</th>
                 <th>template</th>
+                <th>startpage</th>
                 <th>id</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <tr>
                     <td><a href='/admin/page/{{ page.id }}'>{{ page.name }}</a></td>
                     <td>{{ page.template }}</td>
+                    <td>{{ 'yes' if page.is_startpage else 'no' }}</td>
                     <td>{{ page.id }}</td>
                 </tr>
             {% endfor %}
