@@ -1,6 +1,8 @@
-from flask import Blueprint, render_template, redirect
+from flask import Blueprint, render_template, redirect, request
+from bson.objectid import ObjectId
 from nilms.session_utils import login_required
 from nilms.theme_utils import get_theme_templates
+from nilms.facades.page_facade import PageFacade
 
 
 bp = Blueprint(
@@ -26,15 +28,31 @@ def show_dashboard():
 @bp.route('/pages')
 @login_required
 def show_pages():
-    return render_template('admin/pages.html')
+    pages = PageFacade.get_all()
+
+    return render_template('admin/pages.html', pages=pages)
 
 
-@bp.route('/page')
+@bp.route('/page/<page_id>', methods=['POST', 'GET'])
+@bp.route('/page', defaults={'page_id': None}, methods=['POST', 'GET'])
 @login_required
-def show_page():
+def show_page(page_id):
+    page = PageFacade.get(id=ObjectId(page_id)) if page_id else None
     templates = get_theme_templates()
 
-    return render_template('admin/page.html', templates=templates)
+    if request.method == 'POST':
+        if request.form.get('submit'):
+            name = request.form.get('page-name')
+            template = request.form.get('page-template')
+
+            if not page:
+                page = PageFacade.create(name=name, template=template)
+                return redirect('/admin/page/{}'.format(str(page.id)))
+            else:
+                page.update(name=name, template=template)
+                page = PageFacade.get(id=ObjectId(page_id))
+
+    return render_template('admin/page.html', templates=templates, page=page)
 
 
 @bp.route('/settings')

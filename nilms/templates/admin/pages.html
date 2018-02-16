@@ -18,11 +18,11 @@
             </tr>
         </thead>
         <tbody>
-            {% for i in range(0, 20) %}
+            {% for page in pages %}
                 <tr>
-                    <td>my page</td>
-                    <td>products.html</td>
-                    <td>12903901asaa09939023</td>
+                    <td><a href='/admin/page/{{ page.id }}'>{{ page.name }}</a></td>
+                    <td>{{ page.template }}</td>
+                    <td>{{ page.id }}</td>
                 </tr>
             {% endfor %}
         </tbody>

@@ -4,7 +4,7 @@
 {% block admin_content %}
     <form method='POST' class='form'>
         <div class='split' style='height: 100px; line-height: 100px;'>
-            <section class='centered-vertical'><h2>Unnamed</h2></section>
+            <section class='centered-vertical'><h2>{{ page.name if page }}</h2></section>
             <section class='from-right'>
                 <a href='#' class='btn btn-primary'>Edit on site</a>
                 <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
@@ -13,13 +13,13 @@
         <div class='page-info'>
             <label for='page-name'>
                 <p>Name</p>
-                <input type='text' name='page-name' class='input-text' value='Unnamed'/>
+                <input type='text' name='page-name' class='input-text' value='{{ page.name if page }}' />
             </label>
             <label for='page-template'>
                 <p>Template</p>
                 <select name='page-template'>
                     {% for template in templates %}
-                        <option value='{{ template.name }}'>{{ template.name }}</option>
+                        <option {% if page and page.template == template.name %}selected{% endif %} value='{{ template.name }}'>{{ template.name }}</option>
                     {% endfor %}
                 </select>
             </label>
