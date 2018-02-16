@@ -12,7 +12,10 @@ class PageFacade(object):
 
     @staticmethod
     def get(**kwargs):
-        return Page.objects.get(**kwargs)
+        try:
+            return Page.objects.get(**kwargs)
+        except DoesNotExist:
+            return None
 
     @staticmethod
     def get_all():
