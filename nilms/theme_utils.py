@@ -13,3 +13,5 @@ def get_theme_templates():
         return [
             {'path': path, 'name': ntpath.basename(path)}
             for path in glob.glob(query)]
+
+    return []
