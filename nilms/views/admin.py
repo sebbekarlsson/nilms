@@ -44,12 +44,21 @@ def show_page(page_id):
         if request.form.get('submit'):
             name = request.form.get('page-name')
             template = request.form.get('page-template')
+            is_startpage = request.form.get('page-is_startpage') is not None
 
             if not page:
-                page = PageFacade.create(name=name, template=template)
+                page = PageFacade.create(
+                    name=name,
+                    template=template,
+                    is_startpage=is_startpage
+                )
                 return redirect('/admin/page/{}'.format(str(page.id)))
             else:
-                page.update(name=name, template=template)
+                page.update(
+                    name=name,
+                    template=template,
+                    is_startpage=is_startpage
+                )
                 page = PageFacade.get(id=ObjectId(page_id))
 
     return render_template('admin/page.html', templates=templates, page=page)

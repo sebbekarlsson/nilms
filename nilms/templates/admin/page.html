@@ -23,6 +23,10 @@
                     {% endfor %}
                 </select>
             </label>
+            <label for='page-is_startpage'>
+                Use as startpage
+                <input type='checkbox' name='page-is_startpage' {% if page and page.is_startpage %}checked{% endif %}>
+            </label>
         </div>
     </form>
 {% endblock %}
