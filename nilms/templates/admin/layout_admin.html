@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 
+{% set db = get_theme_db() %}
 
 {% block head %}
     <link
@@ -15,7 +16,7 @@
     <div class='view-admin'>
         <div class='view-admin-top'>
             <div class='view-admin-top-section'>
-                <h2>Brand</h2>
+                <h2>{{ db['title'] if 'title' in db else 'nilms' }}</h2>
             </div>
             <div class='view-admin-top-section'>
                 <a href='#' class='menu-item'>
