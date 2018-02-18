@@ -24,3 +24,7 @@
 ### Start the application
 
     python web.py
+
+> Now visit [http://localhost:5000/admin](http://localhost:5000/admin)  
+![login screenshot](screenshots/login.png)  
+> The login credentials is in your `config.json`
