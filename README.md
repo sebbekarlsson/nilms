@@ -26,5 +26,5 @@
     python web.py
 
 > Now visit [http://localhost:5000/admin](http://localhost:5000/admin)  
-![login screenshot](screenshots/login.png = 150x)  
+<img src='screenshots/login.png' width='150px'/>  
 > The login credentials is in your `config.json`
