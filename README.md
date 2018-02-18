@@ -29,3 +29,8 @@
 <img src='screenshots/login.png' width='150px'/>  
 
 > The login credentials is in your `config.json`
+
+## How it works
+* 0 Create a theme. [how to create a theme](HOW_TO_CREATE_A_THEME.md)
+* 1 In your `config.json`, specify where your theme is by changing the `theme_dir` value.
+* 2 Login and start creating pages.
