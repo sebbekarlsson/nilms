@@ -3,6 +3,11 @@
 > that does as little as possible.
 
 ## Installation
+> Requirements:
+
+    * python 2.7
+    * a running instance of MongoDB
+
 > First, let us create a config file:
 
     cp config.example.json config.json
