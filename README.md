@@ -27,4 +27,5 @@
 
 > Now visit [http://localhost:5000/admin](http://localhost:5000/admin)  
 <img src='screenshots/login.png' width='150px'/>  
+
 > The login credentials is in your `config.json`
