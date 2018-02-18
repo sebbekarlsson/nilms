@@ -42,7 +42,7 @@
     <!-- my-startpage.html -->
 
     
-    <h1 class='editable' id='important-text'>Default value</h1>
+    <h1 class='editable' id='important-text'>about page</h1>
 
 * Add the class `editable` to your element
 * Add an `id`.
@@ -52,6 +52,9 @@
 > and the page ID.
 
 > All ids per page needs to be unique.
+
+> This element is now editable:  
+![editable gif](screenshots/editable.gif)
 
 ## Accessing static files
 > Accessing static files is easy, here is an example:
