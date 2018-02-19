@@ -77,6 +77,40 @@ def show_posts():
     return render_template('admin/posts.html', posts=posts)
 
 
+@bp.route('/post/<post_id>', methods=['POST', 'GET'])
+@bp.route('/post', defaults={'post_id': None}, methods=['POST', 'GET'])
+@login_required
+def show_post(post_id):
+    post = PostFacade.get(id=ObjectId(post_id)) if post_id else None
+
+    if request.method == 'POST':
+        if request.form.get('delete'):
+            post.delete()
+            return redirect('/admin/posts')
+
+        if request.form.get('submit'):
+            name = request.form.get('post-name')
+            content = request.form.get('post-content')
+            is_published = request.form.get('post-is_published') is not None
+
+            if not post:
+                post = PostFacade.create(
+                    name=name,
+                    content=content,
+                    is_published=is_published
+                )
+                return redirect('/admin/post/{}'.format(str(post.id)))
+            else:
+                post.update(
+                    name=name,
+                    content=content,
+                    is_published=is_published
+                )
+                post = PostFacade.get(id=ObjectId(post_id))
+
+    return render_template('admin/post.html', post=post)
+
+
 @bp.route('/theme-db', methods=['POST', 'GET'])
 @login_required
 def show_theme_db():

@@ -1,0 +1,31 @@
+{% extends 'admin/layout_admin.html' %}
+
+
+{% block admin_content %}
+    <form method='POST' class='form'>
+        <div class='split' style='height: 100px; line-height: 100px;'>
+            <section class='centered-vertical'><h2>{{ post.name if post }}</h2></section>
+            <section class='from-right'>
+                {% if post %}
+                    <input type='submit' name='delete' class='btn' value='Delete'/>
+                    <a href='/{{ post.name }}' class='btn btn-primary'>Edit on site</a>
+                {% endif %}
+                <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
+            </section>
+        </div>
+        <div class='page-info'>
+            <label for='post-name'>
+                <p>Name</p>
+                <input type='text' name='post-name' class='input-text' value='{{ post.name if post }}' />
+            </label>
+            <label for='post-content'>
+                <p>Content</p>
+                <textarea name='post-content'>{{ post.content if post else '' }}</textarea>
+            </label>
+            <label for='post-is_published'>
+                Published
+            <input type='checkbox' name='post-is_published' {% if post and not post.is_published %}{% else %}checked{% endif %}>
+            </label>
+        </div>
+    </form>
+{% endblock %}
