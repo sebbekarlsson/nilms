@@ -3,6 +3,7 @@ from bson.objectid import ObjectId
 from nilms.session_utils import login_required
 from nilms.theme_utils import get_theme_templates, get_theme_db, set_theme_db
 from nilms.facades.page_facade import PageFacade
+from nilms.facades.post_facade import PostFacade
 
 
 bp = Blueprint(
@@ -66,6 +67,14 @@ def show_page(page_id):
                 page = PageFacade.get(id=ObjectId(page_id))
 
     return render_template('admin/page.html', templates=templates, page=page)
+
+
+@bp.route('/posts')
+@login_required
+def show_posts():
+    posts = PostFacade.get_all()
+
+    return render_template('admin/posts.html', posts=posts)
 
 
 @bp.route('/theme-db', methods=['POST', 'GET'])
