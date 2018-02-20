@@ -86,6 +86,9 @@
 
 > This was just an example!
 
+## Listing pages
+> The same as above, but use the `PageFacade` instead!
+
 ## db.json
 > This is where theme-specific data is stored, can be accessed in themplates
 > by using the global `db` variable, like this:
