@@ -35,6 +35,16 @@
 > please look at the [Jinja2 documentation](http://jinja.pocoo.org/docs/2.10/templates/)  
 > for more information.
 
+### Making your website editable
+> In your layout, insert the admin navigation right after yout `<body>` tag:
+
+    <body>
+        {{ admin_navigation(page.id) }}
+
+        ...
+
+> All set!
+
 ### editable areas in templates
 > We are using the medium editor for editable areas, to make an area editable
 > while singed in, we do this:
