@@ -3,7 +3,9 @@ from mongoengine import (
     StringField,
     DictField,
     BooleanField,
-    DateTimeField
+    DateTimeField,
+    ListField,
+    ReferenceField
 )
 import datetime
 
@@ -13,5 +15,11 @@ class Post(Document):
     content = StringField()
     template = StringField(max_length=200)
     is_published = BooleanField(default=True)
+    assets = ListField(ReferenceField('Asset'))
     created_at = DateTimeField(default=datetime.datetime.now())
     data = DictField()
+
+    def get_asset(self, name):
+        for asset in self.assets:
+            if asset.name == name:
+                return asset

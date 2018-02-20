@@ -1,0 +1,32 @@
+{% extends 'admin/layout_admin.html' %}
+
+
+{% block admin_content %}
+    <div class='split' style='height: 100px; line-height: 100px;'>
+        <section class='centered-vertical'><h2>Assets</h2></section>
+        <section class='from-right'>
+            <a href='/admin/asset' class='btn btn-ok'>Create Asset</a>
+        </section>
+    </div>
+
+    <table class='table push-down'>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>filename</th>
+                <th>created</th>
+                <th>id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asset in assets %}
+                <tr>
+                    <td><a href='/admin/asset/{{ asset.id }}'>{{ asset.name }}</a></td>
+                    <td>{{ asset.filename }}</td>
+                    <td>{{ asset.created_at }}</td>
+                    <td>{{ asset.id }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

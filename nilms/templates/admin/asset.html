@@ -1,0 +1,30 @@
+{% extends 'admin/layout_admin.html' %}
+
+
+{% block admin_content %}
+    <form method='POST' class='form' enctype='multipart/form-data'>
+        <div class='split' style='height: 100px; line-height: 100px;'>
+            <section class='centered-vertical'><h2>{{ asset.name if asset }}</h2></section>
+            <section class='from-right'>
+                {% if asset %}
+                    <input type='submit' name='delete' class='btn' value='Delete'/>
+                {% endif %}
+                <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
+            </section>
+        </div>
+        <div class='page-info'>
+            <label for='asset-name'>
+                <p>Name</p>
+                <input type='text' name='asset-name' class='input-text' value='{{ asset.name if asset }}' />
+            </label>
+            <label for='asset-file'>
+                <p>File</p>
+                {% if asset.filename %}
+                    <b>Current: {{ asset.filename }}</b>
+                {% endif %}
+                <input type='file' name='asset-file'/>
+            </label>
+            {% include 'components/errors.html' %}
+        </div>
+    </form>
+{% endblock %}

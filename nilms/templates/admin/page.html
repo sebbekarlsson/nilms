@@ -26,6 +26,14 @@
                     {% endfor %}
                 </select>
             </label>
+            <label for='page-assets'>
+                <p>Assets</p>
+                <select name='page-assets' multiple>
+                    {% for asset in assets %}
+                        <option {% if page and asset in page.assets %}selected{% endif %} value='{{ asset.id }}'>{{ asset.name }}</option>
+                    {% endfor %}
+                </select>
+            </label>
             <label for='page-is_startpage'>
                 Use as startpage
                 <input type='checkbox' name='page-is_startpage' {% if page and page.is_startpage %}checked{% endif %}>

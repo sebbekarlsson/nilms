@@ -29,6 +29,14 @@
                     {% endfor %}
                 </select>
             </label>
+            <label for='post-assets'>
+                <p>Assets</p>
+                <select name='post-assets' multiple>
+                    {% for asset in assets %}
+                        <option {% if post and asset in post.assets %}selected{% endif %} value='{{ asset.id }}'>{{ asset.name }}</option>
+                    {% endfor %}
+                </select>
+            </label>
             <label for='post-is_published'>
                 Published
             <input type='checkbox' name='post-is_published' {% if post and not post.is_published %}{% else %}checked{% endif %}>

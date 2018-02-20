@@ -1,6 +1,7 @@
 from flask import Blueprint
 from nilms.facades.page_facade import PageFacade
 from nilms.facades.post_facade import PostFacade
+from nilms.facades.asset_facade import AssetFacade
 from nilms.config import config
 from nilms.theme_utils import get_theme_db
 from nilms.editing_utils import admin_navigation
@@ -27,7 +28,8 @@ def show(page_name):
     env.globals.update(
         admin_navigation=admin_navigation,
         PageFacade=PageFacade,
-        PostFacade=PostFacade
+        PostFacade=PostFacade,
+        AssetFacade=AssetFacade
     )
 
     j_template = env.get_template(page.template)
