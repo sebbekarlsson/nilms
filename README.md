@@ -26,7 +26,7 @@
 
     python setup.py develop
 
-#### Run the initialization
+> Run the initialization:
 
     nilms-init
 
