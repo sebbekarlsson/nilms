@@ -26,6 +26,12 @@
 
     python setup.py develop
 
+#### Run the initialization
+
+    nilms-init
+
+> This will create the administrator and insert default data.
+
 ### Start the application
 
     python web.py
