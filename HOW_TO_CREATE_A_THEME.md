@@ -74,6 +74,18 @@
     
     <img src='/theme/static/image/bg.jpg'/>
 
+## Listing posts in your template
+> Use the `PostFacade` to query posts.
+
+    {% for post in PostFacade.get_all(offset=3, limit=100) %}
+        <div class='post'>
+            <h1>{{ post.name }}</h1>
+            <p>{{ post.content }}</h1>
+        </div>
+    {% endfor %}
+
+> This was just an example!
+
 ## db.json
 > This is where theme-specific data is stored, can be accessed in themplates
 > by using the global `db` variable, like this:
