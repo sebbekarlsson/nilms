@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- Main -->
+    <div id="main">
+        <!-- Post -->
+        {% for post in PostFacade.get_all() %}
+            <section class="post">
+                <header class="major">
+                    <span class="date editable" id='post-date'>{{ post.created_at }}</span>
+                    <h1 id='post-title' class='editable'>{{ post.name }}</h1>
+                    <!--<p id='post-short-text' class='editable'>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
+                    facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
+                    amet nullam sed etiam veroeros.</p>-->
+                </header>
+                <div class="image main"><img src="/theme/static/image/pic01.jpg" alt="" /></div>
+                <div id='post-long-text' class='editable'>
+                    {{ post.content }}
+                </div>
+            </section>
+        {% endfor %}
+
+    </div>
+{% endblock %}

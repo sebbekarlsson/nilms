@@ -18,8 +18,8 @@ class PageFacade(object):
             return None
 
     @staticmethod
-    def get_all():
-        return Page.objects().order_by('name')
+    def get_all(order_by='-created_at', offset=None, limit=None):
+        return Page.objects().skip(offset).limit(limit).order_by(order_by)
 
     @staticmethod
     def create(**kwargs):

@@ -18,8 +18,10 @@ class PostFacade(object):
             return None
 
     @staticmethod
-    def get_all():
-        return Post.objects().order_by('name')
+    def get_all(order_by='-created_at', offset=None, limit=None):
+        _all = Post.objects().skip(offset).limit(limit).order_by(order_by)
+
+        return _all
 
     @staticmethod
     def create(**kwargs):

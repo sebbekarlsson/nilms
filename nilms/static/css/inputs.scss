@@ -43,11 +43,25 @@
     border: none;
     outline: none;
     box-sizing: border-box;
-    padding-left: 0.5rem;
+    padding-left: 0.1rem;
     border-bottom-style: solid;
     border-bottom-color: $color_primary;
     border-bottom-width: 1px;
-    @include font-default();
+    @include font-default;
+    font-size: 100%;
+}
+
+.input-textarea {
+    width: 100%;
+    min-height: 200px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0.1rem;
+    border-bottom-style: solid;
+    border-bottom-color: $color_primary;
+    border-bottom-width: 1px;
+    @include font-default;
     font-size: 100%;
 }
 

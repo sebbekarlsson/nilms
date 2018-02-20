@@ -330,7 +330,20 @@
   border: none;
   outline: none;
   box-sizing: border-box;
-  padding-left: 0.5rem;
+  padding-left: 0.1rem;
+  border-bottom-style: solid;
+  border-bottom-color: #3989F0;
+  border-bottom-width: 1px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%; }
+
+.input-textarea {
+  width: 100%;
+  min-height: 200px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0.1rem;
   border-bottom-style: solid;
   border-bottom-color: #3989F0;
   border-bottom-width: 1px;
