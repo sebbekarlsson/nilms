@@ -28,7 +28,7 @@
 						<ul class="links">
 							<!--<li class="active"><a href="index.html">This is Massively</a></li>
                             <li><a href="generic.html">Generic Page</a></li>-->
-                            {% for page in pages %}
+                            {% for page in PageFacade.get_all() %}
                                 <li><a href="/{{ page.name }}">{{ page.name }}</a></li>
                             {% endfor %}
 						</ul>

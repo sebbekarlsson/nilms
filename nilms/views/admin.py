@@ -82,6 +82,7 @@ def show_posts():
 @login_required
 def show_post(post_id):
     post = PostFacade.get(id=ObjectId(post_id)) if post_id else None
+    templates = get_theme_templates()
 
     if request.method == 'POST':
         if request.form.get('delete'):
@@ -91,12 +92,14 @@ def show_post(post_id):
         if request.form.get('submit'):
             name = request.form.get('post-name')
             content = request.form.get('post-content')
+            template = request.form.get('post-template')
             is_published = request.form.get('post-is_published') is not None
 
             if not post:
                 post = PostFacade.create(
                     name=name,
                     content=content,
+                    template=template,
                     is_published=is_published
                 )
                 return redirect('/admin/post/{}'.format(str(post.id)))
@@ -104,11 +107,12 @@ def show_post(post_id):
                 post.update(
                     name=name,
                     content=content,
+                    template=template,
                     is_published=is_published
                 )
                 post = PostFacade.get(id=ObjectId(post_id))
 
-    return render_template('admin/post.html', post=post)
+    return render_template('admin/post.html', templates=templates, post=post)
 
 
 @bp.route('/theme-db', methods=['POST', 'GET'])

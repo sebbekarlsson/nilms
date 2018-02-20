@@ -21,6 +21,8 @@ app.register_blueprint(login_bp)
 app.register_blueprint(api_bp)
 app.register_blueprint(theme_bp)
 
-app.jinja_env.globals.update(get_theme_db=get_theme_db)
+app.jinja_env.globals.update(
+    get_theme_db=get_theme_db
+)
 
 db = db

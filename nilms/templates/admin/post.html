@@ -21,6 +21,14 @@
                 <p>Content</p>
                 <textarea name='post-content'>{{ post.content if post else '' }}</textarea>
             </label>
+            <label for='post-template'>
+                <p>Template</p>
+                <select name='post-template'>
+                    {% for template in templates %}
+                        <option {% if post and post.template == template.name %}selected{% endif %} value='{{ template.name }}'>{{ template.name }}</option>
+                    {% endfor %}
+                </select>
+            </label>
             <label for='post-is_published'>
                 Published
             <input type='checkbox' name='post-is_published' {% if post and not post.is_published %}{% else %}checked{% endif %}>
