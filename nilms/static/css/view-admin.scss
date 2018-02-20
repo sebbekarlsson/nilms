@@ -25,6 +25,10 @@
                 @include display-flex();
                 justify-content: center;
                 align-items: center;
+
+                h2 {
+                    font-weight: 200;
+                }
             }
 
             &:nth-child(2) {
@@ -179,6 +183,10 @@
             box-sizing: border-box;
             padding: 1rem;
             @include font-default();
+
+            h2:nth-child(1) {
+                font-weight: 200;
+            }
         }
     }
 }
