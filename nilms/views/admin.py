@@ -2,7 +2,12 @@ from flask import Blueprint, render_template, redirect, request
 from bson.objectid import ObjectId
 from nilms.session_utils import login_required
 from nilms.asset_utils import upload_file
-from nilms.theme_utils import get_theme_templates, get_theme_db, set_theme_db
+from nilms.theme_utils import (
+    get_theme_templates,
+    get_theme_db,
+    set_theme_db,
+    get_template_config
+)
 from nilms.facades.page_facade import PageFacade
 from nilms.facades.post_facade import PostFacade
 from nilms.facades.asset_facade import AssetFacade
@@ -42,7 +47,10 @@ def show_pages():
 def show_page(page_id):
     page = PageFacade.get(id=ObjectId(page_id)) if page_id else None
     templates = get_theme_templates()
-    assets = AssetFacade.get_all()
+    template_config = None
+
+    if page:
+        template_config = get_template_config(page.template)
 
     if request.method == 'POST':
         if request.form.get('delete'):
@@ -53,18 +61,26 @@ def show_page(page_id):
             name = request.form.get('page-name')
             template = request.form.get('page-template')
             is_startpage = request.form.get('page-is_startpage') is not None
-            asset_ids = request.form.getlist('page-assets')
-            _assets = AssetFacade.get_by_ids(
-                [ObjectId(str(_id)) for _id in asset_ids]
-            )
-            _assets = [ass.to_dbref() for ass in _assets]
+            template_fields = {} if not page else page.fields
+
+            for k, v in request.files.items():
+                if 'template-field' in k:
+                    field_file = request.files.get(k)
+                    assetname = k
+                    filename = upload_file(field_file)
+                    asset = AssetFacade.create(
+                        name=assetname,
+                        filename=filename
+                    )
+
+                    template_fields[k] = asset.to_dbref()
 
             if not page:
                 page = PageFacade.create(
                     name=name,
                     template=template,
                     is_startpage=is_startpage,
-                    assets=_assets
+                    fields=template_fields
                 )
                 return redirect('/admin/page/{}'.format(str(page.id)))
             else:
@@ -72,14 +88,14 @@ def show_page(page_id):
                     name=name,
                     template=template,
                     is_startpage=is_startpage,
-                    assets=_assets
+                    fields=template_fields
                 )
                 page = PageFacade.get(id=ObjectId(page_id))
 
     return render_template(
         'admin/page.html',
+        template_config=template_config,
         templates=templates,
-        assets=assets,
         page=page
     )
 

@@ -53,3 +53,22 @@ def set_theme_db(db):
         pass
 
     return db
+
+
+def get_template_config(name):
+    template_config = {}
+
+    config_path = os.path.join(
+        config['theme_dir'],
+        'templates',
+        name.replace('.html', '.json')
+    )
+
+    if not os.path.isfile(config_path):
+        return None
+
+    with open(config_path) as _file:
+        template_config = json.loads(_file.read())
+    _file.close()
+
+    return template_config

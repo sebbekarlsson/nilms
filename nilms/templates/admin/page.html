@@ -2,7 +2,7 @@
 
 
 {% block admin_content %}
-    <form method='POST' class='form'>
+    <form method='POST' class='form' enctype='multipart/form-data'>
         <div class='split' style='height: 100px; line-height: 100px;'>
             <section class='centered-vertical'><h2>{{ page.name if page }}</h2></section>
             <section class='from-right'>
@@ -26,18 +26,26 @@
                     {% endfor %}
                 </select>
             </label>
-            <label for='page-assets'>
-                <p>Assets</p>
-                <select name='page-assets' multiple>
-                    {% for asset in assets %}
-                        <option {% if page and asset in page.assets %}selected{% endif %} value='{{ asset.id }}'>{{ asset.name }}</option>
-                    {% endfor %}
-                </select>
-            </label>
             <label for='page-is_startpage'>
                 Use as startpage
                 <input type='checkbox' name='page-is_startpage' {% if page and page.is_startpage %}checked{% endif %}>
             </label>
+            {% if page %}
+                <div class='push-down'>
+                    <h3>Template fields</h3>
+                    <div class='push-down'>
+                        {% for name, field_config in template_config.fields.items() %}
+                            <label for='template-field_{{ name }}'>
+                                <p>{{ name }}</p>
+                                {% if field_config.type == 'asset' %}
+                                    <img style='width: 100px;' src='/uploads/{{ page.get_field(name).filename }}'/>
+                                    <input type='file' name='template-field_{{ name }}'/>
+                                {% endif %}
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </form>
 {% endblock %}
