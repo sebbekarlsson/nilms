@@ -11,9 +11,10 @@
         overflow: hidden;
 
         section:nth-child(1) {
-            width: 5%;
-            flex: none;
             @include display-flex();
+            box-sizing: border-box;
+            padding-left: 1rem;
+            padding-right: 1rem;
             justify-content: center;
             align-items: center;
             background-color: $color_primary;
