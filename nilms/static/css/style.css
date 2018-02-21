@@ -389,7 +389,8 @@
     align-items: center;
     border-right-color: #D2D2D2;
     border-right-style: solid;
-    border-right-width: 1px; }
+    border-right-width: 1px;
+    min-width: 120px; }
   .template-fields .template-fields-field section:nth-child(2) {
     flex: 1;
     display: -webkit-box;
