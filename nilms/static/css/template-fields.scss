@@ -1,0 +1,33 @@
+@import 'mixins.scss';
+@import 'variables.scss';
+
+
+.template-fields {
+    .template-fields-field {
+        @include shadow-2;
+        @include display-flex;
+        flex-direction: row;
+        border-radius: 8px;
+        overflow: hidden;
+
+        section:nth-child(1) {
+            width: 5%;
+            flex: none;
+            @include display-flex();
+            justify-content: center;
+            align-items: center;
+            background-color: $color_primary;
+            color: white;
+        }
+        
+        section:nth-child(2) {
+            flex: 1;
+            @include display-flex;
+            align-items: center;
+
+            input[type='file'] {
+                margin-left: 1rem;
+            }
+        }
+    }
+}

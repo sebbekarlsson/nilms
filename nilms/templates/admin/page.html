@@ -33,15 +33,19 @@
             {% if page %}
                 <div class='push-down'>
                     <h3>Template fields</h3>
-                    <div class='push-down'>
+                    <div class='push-down template-fields'>
                         {% for name, field_config in template_config.fields.items() %}
-                            <label for='template-field_{{ name }}'>
-                                <p>{{ name }}</p>
-                                {% if field_config.type == 'asset' %}
-                                    <img style='width: 100px;' src='/uploads/{{ page.get_field(name).filename }}'/>
-                                    <input type='file' name='template-field_{{ name }}'/>
-                                {% endif %}
-                            </label>
+                            <div class='template-fields-field'>
+                                <section>
+                                    <p>{{ name }}</p>
+                                </section>
+                                <section>
+                                    {% if field_config.type == 'asset' %}
+                                        <img style='width: 100px;' src='/uploads/{{ page.get_field(name).filename }}'/>
+                                        <input type='file' name='template-field_{{ name }}'/>
+                                    {% endif %}
+                                </section>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>
