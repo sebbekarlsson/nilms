@@ -66,6 +66,14 @@
 > This element is now editable:  
 ![editable gif](screenshots/editable.gif)
 
+## Global variables
+> Here are some global variables that can be accessed in your template:
+
+* post - only accessable if a post is using the template
+* page - only accessable if a page is using the template
+* PageFacade - used to query pages
+* PostFacade - used to query posts
+
 ## Accessing static files
 > Accessing static files is easy, here is an example:
 
@@ -91,7 +99,7 @@
 
 ## Custom page fields
 > Pages can have custom fields, to enable them, add a `<template-name>.json` file
-> next to the `<template-name>`.json file in your templates.
+> next to the `<template-name>`.html file in your templates directory.
 
 > The `.json` file can look something like this:
 
@@ -110,7 +118,7 @@
     </div>
 
 > When creating a page using this template, the CMS user will be able to upload
-> a file to it.
+> a file to the `bannerImage` field.
 
 > We currently only support fileds with the type `asset`.
 
