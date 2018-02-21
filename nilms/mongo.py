@@ -1,13 +1,6 @@
+from nilms.config import config
 from pymongo import MongoClient
 from mongoengine import connect
-
-
-config = {
-    'mongo': {
-        'host': 'localhost',
-        'db': 'nilms'
-    }
-}
 
 
 client = MongoClient(config['mongo']['host'])

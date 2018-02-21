@@ -2,5 +2,10 @@
     "username": "admin",
     "password": "bad_password",
     "theme_dir": "/path/to/theme",
-    "uploads_dir": "/tmp/uploads"
+    "uploads_dir": "/tmp/uploads",
+    "mongo": {
+        "db": "nilms",
+        "host": "localhost",
+        "port": 27017
+    }
 }
