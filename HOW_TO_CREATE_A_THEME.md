@@ -39,11 +39,11 @@
 > In your layout, insert the admin navigation right after yout `<body>` tag:
 
     <body>
-        {{ admin_navigation(page.id) }}
+        {{ admin_navigation(post, page) }}
 
         ...
 
-> All set!
+> __EXACTLY__ like above and you will be all set!
 
 ### editable areas in templates
 > We are using the medium editor for editable areas, to make an area editable
