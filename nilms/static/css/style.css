@@ -364,7 +364,6 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .template-fields .template-fields-field {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
   display: -ms-flexbox;
@@ -374,7 +373,6 @@
   display: flex;
   /* NEW, Spec - Firefox, Chrome, Opera */
   flex-direction: row;
-  border-radius: 8px;
   overflow: hidden; }
   .template-fields .template-fields-field section:nth-child(1) {
     display: -webkit-box;
@@ -386,12 +384,12 @@
     display: flex;
     /* NEW, Spec - Firefox, Chrome, Opera */
     box-sizing: border-box;
-    padding-left: 1rem;
     padding-right: 1rem;
     justify-content: center;
     align-items: center;
-    background-color: #3989F0;
-    color: white; }
+    border-right-color: #D2D2D2;
+    border-right-style: solid;
+    border-right-width: 1px; }
   .template-fields .template-fields-field section:nth-child(2) {
     flex: 1;
     display: -webkit-box;

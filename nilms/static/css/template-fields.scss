@@ -4,21 +4,19 @@
 
 .template-fields {
     .template-fields-field {
-        @include shadow-2;
         @include display-flex;
         flex-direction: row;
-        border-radius: 8px;
         overflow: hidden;
 
         section:nth-child(1) {
             @include display-flex();
             box-sizing: border-box;
-            padding-left: 1rem;
             padding-right: 1rem;
             justify-content: center;
             align-items: center;
-            background-color: $color_primary;
-            color: white;
+            border-right-color: $color_light_text;
+            border-right-style: solid;
+            border-right-width: 1px;
         }
         
         section:nth-child(2) {
