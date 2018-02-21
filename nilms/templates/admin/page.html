@@ -41,7 +41,9 @@
                                 </section>
                                 <section>
                                     {% if field_config.type == 'asset' %}
-                                        <img style='width: 100px;' src='/uploads/{{ page.get_field(name).filename }}'/>
+                                        {% if page.get_field(name) %}
+                                            <img style='width: 100px;' src='/uploads/{{ page.get_field(name).filename }}'/>
+                                        {% endif %}
                                         <input type='file' name='template-field_{{ name }}'/>
                                     {% endif %}
                                 </section>
