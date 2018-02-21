@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- Main -->
+    <div id="main">
+        <!-- Post -->
+        <section class="post">
+            <header class="major">
+                <span class="date editable" id='post-date'>April 25, 2015</span>
+                <h1 id='post-title' class='editable'>{{ post.name }}</h1>
+            </header>
+            <div class="image main"><img src="/uploads/{{ page.get_field('image').filename }}" alt="" /></div>
+            <div id='post-long-text' class='editable'>
+                <p>{{ post.content }}</p>
+            </div>
+        </section>
+
+    </div>
+{% endblock %}

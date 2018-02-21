@@ -1,13 +1,19 @@
-<input type='hidden' name='page_id' value='{{ page_id }}'/>
-<style type='text/css'>
-{% include 'editing/medium-editor.min.css' %}
-{% include 'editing/admin_navigation.css' %}
-</style>
+{% if not post %}
+    <input type='hidden' name='page_id' value='{{ page.id }}'/>
+{% endif %}
+    <style type='text/css'>
+        {% include 'editing/medium-editor.min.css' %}
+        {% include 'editing/admin_navigation.css' %}
+    </style>
 <nav class='admin-navigation-editing'>
     <a href='/admin' class='admin-navigation-editing-item'>admin</a>
-    <div id='admin-save' class='admin-navigation-editing-item'>save</div>
+    {% if not post %}
+        <div id='admin-save' class='admin-navigation-editing-item'>save</div>
+    {% endif %}
 </nav>
-<script type='text/javascript'>
-    {% include 'editing/medium-editor.min.js' %}
-</script>
-<script type='text/javascript' src='/static/site/js/packed.js'></script>
+{% if not post %}
+    <script type='text/javascript'>
+        {% include 'editing/medium-editor.min.js' %}
+    </script>
+    <script type='text/javascript' src='/static/site/js/packed.js'></script>
+{% endif %}

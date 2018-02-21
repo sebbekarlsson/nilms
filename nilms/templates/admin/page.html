@@ -30,7 +30,7 @@
                 Use as startpage
                 <input type='checkbox' name='page-is_startpage' {% if page and page.is_startpage %}checked{% endif %}>
             </label>
-            {% if page %}
+            {% if page and template_config %}
                 <div class='push-down'>
                     <h3>Template fields</h3>
                     <div class='push-down template-fields'>
