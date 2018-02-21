@@ -89,6 +89,31 @@
 ## Listing pages
 > The same as above, but use the `PageFacade` instead!
 
+## Custom page fields
+> Pages can have custom fields, to enable them, add a `<template-name>.json` file
+> next to the `<template-name>`.json file in your templates.
+
+> The `.json` file can look something like this:
+
+    {
+        "fields": {
+            "bannerImage": {
+                "type": "asset"
+            }
+        }
+    }
+
+> And then in your `<template-name>.html` you can access that field like this:
+
+    <div class='my-cool-container'>
+        <img src='/uploads/{{ page.get_field('bannerImage').filename }}'/> 
+    </div>
+
+> When creating a page using this template, the CMS user will be able to upload
+> a file to it.
+
+> We currently only support fileds with the type `asset`.
+
 ## db.json
 > This is where theme-specific data is stored, can be accessed in themplates
 > by using the global `db` variable, like this:
