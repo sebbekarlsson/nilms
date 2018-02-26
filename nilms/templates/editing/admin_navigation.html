@@ -1,10 +1,16 @@
 {% if not post %}
     <input type='hidden' name='page_id' value='{{ page.id }}'/>
+    <div class='popups-container' data-active='false'>
+        <div class='popups-container-popup' data-name='popup-loading' data-active='false'>
+            <p>Please wait...</p>
+        </div>
+    </div>
 {% endif %}
-    <style type='text/css'>
-        {% include 'editing/medium-editor.min.css' %}
-        {% include 'editing/admin_navigation.css' %}
-    </style>
+<style type='text/css'>
+{% include 'editing/medium-editor.min.css' %}
+{% include 'editing/admin_navigation.css' %}
+</style>
+<link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='site/css/style.css') }}'>
 <nav class='admin-navigation-editing'>
     <a href='/admin' class='admin-navigation-editing-item'>admin</a>
     {% if not post %}

@@ -1,0 +1,58 @@
+.popups-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .popups-container[data-active='false'] {
+    display: none; }
+  .popups-container .popups-container-popup {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    position: relative; }
+    .popups-container .popups-container-popup[data-active='false'] {
+      display: none; }
+    .popups-container .popups-container-popup .popup-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 1rem; }
+      .popups-container .popups-container-popup .popup-content .button {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 0; }
+
+.popups-container-popup[data-name='popup-loading'] {
+  width: 200px;
+  height: 200px;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: white; }
+
+/*# sourceMappingURL=style.css.map */

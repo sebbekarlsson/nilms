@@ -10,6 +10,7 @@ jsfiles_dir = os.path.join(
 final_jsfile = os.path.join(jsfiles_dir, 'packed.js')
 
 jsfiles = [
+    'popups.js',
     'wget.js',
     'wpost.js',
     'initializer.js',

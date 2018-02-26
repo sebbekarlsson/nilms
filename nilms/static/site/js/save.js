@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
     window.saveButton = document.getElementById('admin-save');
     
     saveButton.addEventListener('click', function(e) {
+        popupManager.togglePopup('popup-loading');
+
         query = {};
 
         for (var i = 0; i < fields.length; i++) {
@@ -15,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
             '/api/page/update/' + page_id,
             query,
             function(data) {
-                console.log(data);
+                setTimeout(function(){
+                    popupManager.togglePopup('popup-loading');
+                }, 500);
             }
         );
     });

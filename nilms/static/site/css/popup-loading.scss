@@ -1,0 +1,12 @@
+@import 'mixins.scss';
+
+
+.popups-container-popup[data-name='popup-loading'] {
+    width: 200px;
+    height: 200px;
+    @include display-flex();
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+}
