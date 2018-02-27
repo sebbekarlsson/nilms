@@ -15,6 +15,32 @@
         background-position: center;
         margin: 1rem;
         background-color: $color_primary_light;
+        position: relative;
+
+        .remove-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            background-color: $color_primary;
+            color: white;
+
+            .material-icons {
+                color: white;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: $color_primary_light;
+                
+                .material-icons {
+                    color: black;
+                }
+            }
+        }
 
         &[selected="1"] {
             outline-style: solid;

@@ -34,7 +34,9 @@
                 {% if post and post.assets %}
                     <div class='asset-gallery'>
                         {% for asset in post.assets %}
-                            <div class='asset-gallery-item' style='background-image: url("/uploads/{{ asset.filename }}");'></div>
+                            <div data-id='{{ asset.id }}' class='asset-gallery-item' style='background-image: url("/uploads/{{ asset.filename }}");'>
+                                <span class='remove-btn'><i class='material-icons'>close</i></span>
+                            </div>
                         {% endfor %}
                     </div>
                 {% endif %}
