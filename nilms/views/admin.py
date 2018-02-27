@@ -162,7 +162,7 @@ def show_post(post_id):
                 new_assets.append(asset)
 
             if post:
-                new_assets = post.assets if post.assets else [] + new_assets
+                new_assets = post.assets + new_assets
             else:
                 pass
 

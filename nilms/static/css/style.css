@@ -154,7 +154,8 @@
         display: block;
         border-radius: 32px;
         background-size: 100%;
-        background-size: cover; }
+        background-size: cover;
+        background-color: black; }
   .view-admin .view-admin-bottom {
     flex: 1;
     display: -webkit-box;
