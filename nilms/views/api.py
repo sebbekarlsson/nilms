@@ -4,8 +4,6 @@ from nilms.facades.post_facade import PostFacade
 from nilms.facades.asset_facade import AssetFacade
 from nilms.session_utils import login_required
 from bson.objectid import ObjectId
-from bson.json_util import dumps
-import json
 
 
 bp = Blueprint(

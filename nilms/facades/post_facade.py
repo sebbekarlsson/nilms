@@ -19,7 +19,8 @@ class PostFacade(object):
 
     @staticmethod
     def get_all(order_by='-created_at', offset=None, limit=None, query={}):
-        _all = Post.objects(**query).skip(offset).limit(limit).order_by(order_by)
+        _all = Post.objects(**query)\
+            .skip(offset).limit(limit).order_by(order_by)
 
         return _all
 
