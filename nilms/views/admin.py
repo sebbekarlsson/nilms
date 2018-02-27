@@ -24,13 +24,7 @@ bp = Blueprint(
 @bp.route('/')
 @login_required
 def show():
-    return redirect('/admin/dashboard')
-
-
-@bp.route('/dashboard')
-@login_required
-def show_dashboard():
-    return render_template('admin/dashboard.html')
+    return redirect('/admin/pages')
 
 
 @bp.route('/pages')

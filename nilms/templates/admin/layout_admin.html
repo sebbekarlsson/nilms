@@ -40,16 +40,6 @@
         </div>
         <div class='view-admin-bottom'>
             <div class='view-admin-menu'>
-                <a href='/admin/dashboard' {% if 'dashboard' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
-                    <div class='menu-item-indicator'>
-                    </div>
-                    <div class='menu-item-icon-holder'>
-                        <i class='material-icons'>dashboard</i>
-                    </div>
-                    <div class='menu-item-text'>
-                        dashboard
-                    </div>
-                </a>
                 <a href='/admin/pages' {% if 'pages' in request.url_rule.rule %}data-selected='1'{% endif %} class='menu-item'>
                     <div class='menu-item-indicator'>
                     </div>
