@@ -210,7 +210,7 @@ def show_asset(asset_id):
 
     if request.method == 'POST':
         if request.form.get('delete'):
-            asset.delete()
+            AssetFacade.delete(id=ObjectId(asset_id))
             return redirect('/admin/assets')
 
         if request.form.get('submit'):
