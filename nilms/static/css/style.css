@@ -267,6 +267,9 @@
   .table th, .table td {
     box-sizing: border-box;
     padding: 1rem; }
+    .table th img, .table td img {
+      vertical-align: middle;
+      width: 32px; }
   .table tr {
     background-color: white;
     border-bottom-color: #F3F7FA;

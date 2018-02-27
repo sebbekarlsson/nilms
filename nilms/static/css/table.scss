@@ -11,6 +11,11 @@
     th, td {
         box-sizing: border-box;
         padding: 1rem;
+        
+        img {
+            vertical-align: middle;
+            width: 32px;
+        }
     }
 
     tr {

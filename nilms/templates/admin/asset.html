@@ -20,6 +20,7 @@
             <label for='asset-file'>
                 <p>File</p>
                 {% if asset.filename %}
+                    <img style='width: 100px;' src='/uploads/{{ asset.filename }}'/><br>
                     <b>Current: {{ asset.filename }}</b>
                 {% endif %}
                 <input type='file' name='asset-file'/>
