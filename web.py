@@ -19,6 +19,8 @@ def run():
         env.register(
             'js_all',
             flask_assets.Bundle(
+                'wget.js',
+                'asset_gallery.js',
                 'utils.js',
                 'app.js',
                 filters=['jsmin'],
