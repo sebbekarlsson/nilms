@@ -383,7 +383,8 @@
     background-size: 100%;
     background-size: cover;
     background-position: center;
-    margin: 1rem; }
+    margin: 1rem;
+    background-color: #E9F3FE; }
     .asset-gallery .asset-gallery-item[selected="1"] {
       outline-style: solid;
       outline-width: 1px;

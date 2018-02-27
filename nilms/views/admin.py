@@ -150,11 +150,21 @@ def show_post(post_id):
             content = request.form.get('post-content')
             template = request.form.get('post-template')
             is_published = request.form.get('post-is_published') is not None
-            asset_ids = request.form.getlist('post-assets')
-            _assets = AssetFacade.get_by_ids(
-                [ObjectId(str(_id)) for _id in asset_ids]
-            )
-            _assets = [ass.to_dbref() for ass in _assets]
+            new_asset_files = request.files.getlist('new-assets')
+            new_assets = []
+
+            for new_asset_file in new_asset_files:
+                filename = upload_file(new_asset_file)
+                asset = AssetFacade.create(
+                    name=new_asset_file.filename,
+                    filename=filename
+                )
+                new_assets.append(asset)
+
+            if post:
+                new_assets = post.assets if post.assets else [] + new_assets
+            else:
+                pass
 
             if not post:
                 post = PostFacade.create(
@@ -162,7 +172,7 @@ def show_post(post_id):
                     content=content,
                     template=template,
                     is_published=is_published,
-                    assets=_assets
+                    assets=new_assets
                 )
                 return redirect('/admin/post/{}'.format(str(post.id)))
             else:
@@ -171,7 +181,7 @@ def show_post(post_id):
                     content=content,
                     template=template,
                     is_published=is_published,
-                    assets=_assets
+                    assets=new_assets
                 )
                 post = PostFacade.get(id=ObjectId(post_id))
 
