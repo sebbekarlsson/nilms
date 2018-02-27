@@ -1,11 +1,23 @@
 {% extends 'admin/layout_admin.html' %}
 
 
+{% from '_formhelpers.html' import render_field %}
+
+
 {% block admin_content %}
-    <div class='split' style='height: 100px; line-height: 100px;'>
-        <section class='centered-vertical'><h2>Your Account</h2></section>
-        <section class='from-right'>
-            <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
-        </section>
+    <form method='POST' class='form' enctype='multipart/form-data'>
+        <div class='split' style='height: 100px; line-height: 100px;'>
+            <section class='centered-vertical'><h2>Your Account</h2></section>
+            <section class='from-right'>
+                <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
+            </section>
+        </div>
+        <div class='page-info'>
+            {{ render_field(form.name) }}
+            {{ render_field(form.avatar) }}
+            {% if user.avatar %}
+                <img style='width: 100px;' src='/uploads/{{ user.avatar.filename }}'/>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, request
 from bson.objectid import ObjectId
-from nilms.session_utils import login_required
+from nilms.session_utils import login_required, get_current_user
 from nilms.asset_utils import upload_file
 from nilms.theme_utils import (
     get_theme_templates,
@@ -8,9 +8,11 @@ from nilms.theme_utils import (
     set_theme_db,
     get_template_config
 )
+from nilms.forms.AccountSettingsForm import AccountSettingsForm
 from nilms.facades.page_facade import PageFacade
 from nilms.facades.post_facade import PostFacade
 from nilms.facades.asset_facade import AssetFacade
+from nilms.facades.user_facade import UserFacade
 
 
 bp = Blueprint(
@@ -30,7 +32,29 @@ def show():
 @bp.route('/account-settings', methods=['POST', 'GET'])
 @login_required
 def show_account_settings():
-    return render_template('admin/account_settings.html')
+    user = get_current_user()
+
+    form = AccountSettingsForm(request.form)
+
+    if request.method == 'POST' and form.validate():
+        kwargs = {
+            'name': form.name.data
+        }
+
+        if 'avatar' in request.files:
+            filename = upload_file(request.files['avatar'])
+            avatar_asset = AssetFacade.create(
+                name=form.name.data + '-avatar',
+                filename=filename
+            )
+            kwargs['avatar'] = avatar_asset
+
+        user.update(**kwargs)
+        user = UserFacade.get(id=user.id)
+
+    form.name.data = user.name
+
+    return render_template('admin/account_settings.html', form=form, user=user)
 
 
 @bp.route('/pages')

@@ -5,11 +5,12 @@ setup(
     name='nilms',
     version='0.1',
     install_requires=[
-        'flask',
+        'wtforms',
         'flask_assets',
         'pymongo',
         'mongoengine',
         'jsmin',
+        'flask',
         'bcrypt'
     ],
     packages=[

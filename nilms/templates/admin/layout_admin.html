@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% set db = get_theme_db() %}
+{% set user = get_current_user() %}
 
 {% block head %}
     <link
@@ -28,7 +29,13 @@
             </div>
             <div class='view-admin-top-section'>
                 <div class='menu-item'>
-                    <div class='menu-item-circle' style='background-image: url({{ url_for('static', filename='image/avatar.jpg') }});'>
+                    <div class='menu-item-circle' style='
+                        {% if user.avatar %}
+                            background-image: url("/uploads/{{ user.avatar.filename }}");
+                        {% else %}
+                            background-color: black;
+                        {% endif %}
+                    '>
                     </div>
                     <div class='menu-item-dropdown'>
                         <ul>
