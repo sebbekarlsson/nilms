@@ -27,6 +27,12 @@ def show():
     return redirect('/admin/pages')
 
 
+@bp.route('/account-settings', methods=['POST', 'GET'])
+@login_required
+def show_account_settings():
+    return render_template('admin/account_settings.html')
+
+
 @bp.route('/pages')
 @login_required
 def show_pages():
