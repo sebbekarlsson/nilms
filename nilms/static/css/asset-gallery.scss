@@ -1,0 +1,24 @@
+@import 'mixins.scss';
+@import 'variables.scss';
+
+
+.asset-gallery {
+    @include display-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .asset-gallery-item {
+        width: 100px;
+        height: 100px;
+        background-size: 100%;
+        background-size: cover;
+        background-position: center;
+        margin: 1rem;
+
+        &[selected="1"] {
+            outline-style: solid;
+            outline-width: 1px;
+            outline-color: $color_primary;
+        }
+    }
+}

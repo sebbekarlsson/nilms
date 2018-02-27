@@ -2,7 +2,7 @@
 
 
 {% block admin_content %}
-    <form method='POST' class='form'>
+    <form method='POST' class='form' enctype='multipart/form-data'>
         <div class='split' style='height: 100px; line-height: 100px;'>
             <section class='centered-vertical'><h2>{{ post.name if post }}</h2></section>
             <section class='from-right'>
@@ -31,12 +31,14 @@
                 </select>
             </label>
             <label for='post-assets'>
-                <p>Assets</p>
-                <select name='post-assets' multiple>
-                    {% for asset in assets %}
-                        <option {% if post and asset in post.assets %}selected{% endif %} value='{{ asset.id }}'>{{ asset.name }}</option>
-                    {% endfor %}
-                </select>
+                {% if post and post.assets %}
+                    <div class='asset-gallery'>
+                        {% for asset in post.assets %}
+                            <div class='asset-gallery-item' style='background-image: url("/uploads/{{ asset.filename }}");'></div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <input type='file' name='new-assets' multiple>
             </label>
             <label for='post-is_published'>
                 Published
