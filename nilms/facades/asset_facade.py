@@ -15,8 +15,15 @@ class AssetFacade(object):
             return None
 
     @staticmethod
-    def get_all(order_by='-created_at', offset=None, limit=None):
-        _all = Asset.objects().skip(offset).limit(limit).order_by(order_by)
+    def delete(**kwargs):
+        try:
+            return Asset.objects(**kwargs).delete()
+        except DoesNotExist:
+            return False
+
+    @staticmethod
+    def get_all(order_by='-created_at', offset=None, limit=None, query={}):
+        _all = Asset.objects(**query).skip(offset).limit(limit).order_by(order_by)
 
         return _all
 
