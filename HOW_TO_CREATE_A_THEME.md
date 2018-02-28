@@ -125,7 +125,7 @@
 > When creating a page using this template, the CMS user will be able to upload
 > a file to the `bannerImage` field.
 
-> We currently only support fileds with the type `asset`.
+> We currently only support fields with the type `asset`.
 
 ## db.json
 > This is where theme-specific data is stored, can be accessed in themplates
