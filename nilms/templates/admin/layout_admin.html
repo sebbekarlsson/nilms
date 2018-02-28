@@ -29,6 +29,7 @@
             </div>
             <div class='view-admin-top-section'>
                 <div class='menu-item'>
+                    <p class='push-left'>{{ user.name }}</p>
                     <div class='menu-item-circle' style='
                         {% if user.avatar %}
                             background-image: url("/uploads/{{ user.avatar.filename }}");
