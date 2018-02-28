@@ -19,11 +19,6 @@ class Post(Document):
     created_at = DateTimeField(default=datetime.datetime.now())
     data = DictField()
 
-    def get_asset(self, name):
-        for asset in self.assets:
-            if asset.name == name:
-                return asset
-
     def get_field(self, name):
         '''
         There is currently no plan for fields in Post

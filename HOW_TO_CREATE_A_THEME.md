@@ -94,6 +94,9 @@
 
 > This was just an example!
 
+> The `post` object has some accessible fields, such as `name` and `content`  
+> for more fields [click here](FIELDS_POST.md).
+
 ## Listing pages
 > The same as above, but use the `PageFacade` instead!
 
