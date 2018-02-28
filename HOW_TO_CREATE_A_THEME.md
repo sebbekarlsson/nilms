@@ -100,6 +100,8 @@
 ## Listing pages
 > The same as above, but use the `PageFacade` instead!
 
+> The `page` object has some accessible fields, [click here](FIELDS_PAGE.md)
+
 ## Custom page fields
 > Pages can have custom fields, to enable them, add a `<template-name>.json` file
 > next to the `<template-name>`.html file in your templates directory.
