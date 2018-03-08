@@ -6,6 +6,7 @@ window.loadFields = function() {
             if (data.hasOwnProperty(property)) {
                 var field = document.getElementById(property);
                 field.innerText = data[property];
+                field.classList.remove('medium-editor-placeholder');
             }
         }
     });

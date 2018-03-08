@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', function(e) {
     if (!window.visitor)
-        window.editor = new MediumEditor('.editable');
+        window.editor = new MediumEditor('.editable', {
+            'disablePlaceholders': true
+        });
     
     window.page_id = document.querySelector('input[name="page_id"]').value;
     window.fields = document.querySelectorAll('.editable');

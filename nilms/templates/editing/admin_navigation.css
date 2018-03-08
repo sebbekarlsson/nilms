@@ -4,6 +4,7 @@
     background-color: black;
     z-index: 100;
     position: absolute;
+    top: 0;
 }
 
 .admin-navigation-editing-item {

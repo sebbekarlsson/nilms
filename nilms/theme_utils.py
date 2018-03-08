@@ -27,10 +27,10 @@ def get_template_path(name):
 def get_theme_db():
     file_path = os.path.join(config['theme_dir'], 'db.json')
 
-    if not os.path.isfile(file_path):
-        return None
-
     db = {}
+
+    if not os.path.isfile(file_path):
+        return db
 
     try:
         with open(file_path) as _file:
