@@ -4,7 +4,7 @@
     <!-- Main -->
     <div id="main">
         <!-- Post -->
-        {% for post in PostFacade.get_all() %}
+        {% for post in PostFacade.get_all(query={'kind': 'news'}) %}
             <section class="post">
                 <header class="major">
                     <span class="date editable" id='post-date'>{{ post.created_at }}</span>

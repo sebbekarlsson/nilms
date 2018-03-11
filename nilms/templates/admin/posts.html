@@ -13,6 +13,7 @@
         <thead>
             <tr>
                 <th>name</th>
+                <th>kind</th>
                 <th>published</th>
                 <th>created</th>
                 <th>id</th>
@@ -22,6 +23,7 @@
             {% for post in posts %}
                 <tr>
                     <td><a href='/admin/post/{{ post.id }}'>{{ post.name }}</a></td>
+                    <td>{{ post.kind }}</td>
                     <td>{{ 'yes' if post.is_published else 'no' }}</td>
                     <td>{{ post.created_at }}</td>
                     <td>{{ post.id }}</td>

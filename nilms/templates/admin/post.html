@@ -30,13 +30,13 @@
                     {% endfor %}
                 </select>
             </label>
-            {% if types %}
+            {% if kinds %}
                 <label for='post-kind'>
                     <p>Kind</p>
                     <select name='post-kind'>
                         <option {% if not post.kind %}selected{% endif %} value=''>No kind selected</option>
-                        {% for type in types %}
-                            <option {% if post.kind == type %}selected{% endif %} value='{{ type }}'>{{ type }}</option>
+                        {% for kind in kinds %}
+                            <option {% if post.kind == kind %}selected{% endif %} value='{{ kind }}'>{{ kind }}</option>
                         {% endfor %}
                     </select>
                 </label>
