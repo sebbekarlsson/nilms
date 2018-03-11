@@ -143,6 +143,8 @@ def show_post(post_id):
     post = PostFacade.get(id=ObjectId(post_id)) if post_id else None
     templates = get_theme_templates()
     assets = AssetFacade.get_all()
+    theme_db = get_theme_db()
+    types = theme_db['post_kinds'] if 'post_kinds' in theme_db else []
 
     if request.method == 'POST':
         if request.form.get('delete'):
@@ -153,9 +155,12 @@ def show_post(post_id):
             name = request.form.get('post-name')
             content = request.form.get('post-content')
             template = request.form.get('post-template')
+            post_type = request.form.get('post-kind')
             is_published = request.form.get('post-is_published') is not None
             new_asset_files = request.files.getlist('new-assets')
             new_assets = []
+
+            post_type = None if not post_type else post_type
 
             for new_asset_file in new_asset_files:
                 filename = upload_file(new_asset_file)
@@ -175,6 +180,7 @@ def show_post(post_id):
                     name=name,
                     content=content,
                     template=template,
+                    kind=post_type,
                     is_published=is_published,
                     assets=new_assets
                 )
@@ -184,6 +190,7 @@ def show_post(post_id):
                     name=name,
                     content=content,
                     template=template,
+                    kind=post_type,
                     is_published=is_published,
                     assets=new_assets
                 )
@@ -193,6 +200,7 @@ def show_post(post_id):
         'admin/post.html',
         templates=templates,
         assets=assets,
+        types=types,
         post=post
     )
 

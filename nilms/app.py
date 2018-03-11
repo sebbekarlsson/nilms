@@ -26,7 +26,9 @@ app.register_blueprint(uploads_bp)
 
 app.jinja_env.globals.update(
     get_theme_db=get_theme_db,
-    get_current_user=get_current_user
+    get_current_user=get_current_user,
+    isinstance=isinstance,
+    basestring=basestring
 )
 
 db = db
