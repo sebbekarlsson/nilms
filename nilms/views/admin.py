@@ -99,6 +99,10 @@ def show_page(page_id):
 
                     template_fields[k] = asset.to_dbref()
 
+            for k, v in request.form.items():
+                if 'template-field' in k:
+                    template_fields[k] = v
+
             if not page:
                 page = PageFacade.create(
                     name=name,

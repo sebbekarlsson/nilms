@@ -2,6 +2,12 @@
     "fields": {
         "image": {
             "type": "asset"
+        },
+        "some-cool-text": {
+            "type": "string"
+        },
+        "some-large-text": {
+            "type": "textarea"
         }
     }
 }
