@@ -15,6 +15,7 @@ class Post(Document):
     content = StringField()
     template = StringField(max_length=200)
     is_published = BooleanField(default=True)
+    kind = StringField(max_length=150)
     assets = ListField(ReferenceField('Asset'))
     created_at = DateTimeField(default=datetime.datetime.now())
     data = DictField()

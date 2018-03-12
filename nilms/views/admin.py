@@ -99,6 +99,10 @@ def show_page(page_id):
 
                     template_fields[k] = asset.to_dbref()
 
+            for k, v in request.form.items():
+                if 'template-field' in k:
+                    template_fields[k] = v
+
             if not page:
                 page = PageFacade.create(
                     name=name,
@@ -139,6 +143,8 @@ def show_post(post_id):
     post = PostFacade.get(id=ObjectId(post_id)) if post_id else None
     templates = get_theme_templates()
     assets = AssetFacade.get_all()
+    theme_db = get_theme_db()
+    kinds = theme_db['post_kinds'] if 'post_kinds' in theme_db else []
 
     if request.method == 'POST':
         if request.form.get('delete'):
@@ -149,9 +155,12 @@ def show_post(post_id):
             name = request.form.get('post-name')
             content = request.form.get('post-content')
             template = request.form.get('post-template')
+            post_kind = request.form.get('post-kind')
             is_published = request.form.get('post-is_published') is not None
             new_asset_files = request.files.getlist('new-assets')
             new_assets = []
+
+            post_kind = None if not post_kind else post_kind
 
             for new_asset_file in new_asset_files:
                 filename = upload_file(new_asset_file)
@@ -171,6 +180,7 @@ def show_post(post_id):
                     name=name,
                     content=content,
                     template=template,
+                    kind=post_kind,
                     is_published=is_published,
                     assets=new_assets
                 )
@@ -180,6 +190,7 @@ def show_post(post_id):
                     name=name,
                     content=content,
                     template=template,
+                    kind=post_kind,
                     is_published=is_published,
                     assets=new_assets
                 )
@@ -189,6 +200,7 @@ def show_post(post_id):
         'admin/post.html',
         templates=templates,
         assets=assets,
+        kinds=kinds,
         post=post
     )
 

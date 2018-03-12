@@ -30,6 +30,17 @@
                     {% endfor %}
                 </select>
             </label>
+            {% if kinds %}
+                <label for='post-kind'>
+                    <p>Kind</p>
+                    <select name='post-kind'>
+                        <option {% if not post.kind %}selected{% endif %} value=''>No kind selected</option>
+                        {% for kind in kinds %}
+                            <option {% if post.kind == kind %}selected{% endif %} value='{{ kind }}'>{{ kind }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            {% endif %}
             <label for='post-assets'>
                 {% if post and post.assets %}
                     <div class='asset-gallery'>

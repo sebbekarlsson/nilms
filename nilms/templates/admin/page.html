@@ -45,6 +45,10 @@
                                             <img style='width: 100px;' src='/uploads/{{ page.get_field(name).filename }}'/>
                                         {% endif %}
                                         <input type='file' name='template-field_{{ name }}'/>
+                                    {% elif field_config.type == 'string' %}
+                                        <input type='text' class='input-text' name='template-field_{{ name }}' value='{{ page.get_field(name) }}'/>
+                                    {% elif field_config.type == 'textarea' %}
+                                        <textarea class='input-textarea' name='template-field_{{ name }}'>{{ page.get_field(name) }}</textarea>
                                     {% endif %}
                                 </section>
                             </div>

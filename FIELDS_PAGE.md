@@ -3,6 +3,7 @@
 
 * name - string
 * template - string
+* kind - string
 * is\_startpage - boolean
 * created\_at - datetime
 * data - dictionary
