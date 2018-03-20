@@ -24,3 +24,48 @@ def upload_file(_file):
     _file.save(new_name_full)
 
     return new_name
+
+
+def get_file_type(filename):
+    fname, extension = os.path.splitext(filename)
+    extension = extension.lower()
+
+    if extension in [
+        '.jpg',
+        '.png',
+        '.gif',
+        '.bmp',
+        '.jpeg'
+    ]:
+        return 'image'
+
+    if extension in [
+        '.html',
+        '.htm'
+    ]:
+        return 'html'
+
+    if extension in [
+        '.exe',
+        '.out'
+    ]:
+        return 'executable'
+
+    if extension in [
+        '.dll',
+        '.so',
+        '.a',
+        '.dylib'
+    ]:
+        return 'binary'
+
+    if extension in [
+        '.zip',
+        '.rar',
+        '.tar.gz',
+        '.tar',
+        '.gz'
+    ]:
+        return 'archive'
+
+    return 'unknown'

@@ -7,6 +7,7 @@ from nilms.views.theme import bp as theme_bp
 from nilms.views.uploads import bp as uploads_bp
 from nilms.theme_utils import get_theme_db
 from nilms.session_utils import get_current_user
+from nilms.asset_utils import get_file_type
 from flask import Flask
 
 
@@ -28,7 +29,8 @@ app.jinja_env.globals.update(
     get_theme_db=get_theme_db,
     get_current_user=get_current_user,
     isinstance=isinstance,
-    basestring=basestring
+    basestring=basestring,
+    get_file_type=get_file_type
 )
 
 db = db

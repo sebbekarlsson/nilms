@@ -45,8 +45,10 @@
                 {% if post and post.assets %}
                     <div class='asset-gallery'>
                         {% for asset in post.assets %}
-                            <div data-id='{{ asset.id }}' class='asset-gallery-item' style='background-image: url("/uploads/{{ asset.filename }}");'>
-                                <span class='remove-btn'><i class='material-icons'>close</i></span>
+                            {% set file_type = get_file_type(asset.filename) %}
+                                <div data-id='{{ asset.id }}' class='asset-gallery-item' {% if file_type == 'image' %} style='background-image: url("/uploads/{{ asset.filename }}");' {% endif %}>
+                                    <span class='remove-btn'><i class='material-icons'>close</i></span>
+                                    {% if file_type != 'image' %}<p class='asset-gallery-item-text'>{{ file_type }}</p>{% endif %}
                             </div>
                         {% endfor %}
                     </div>
