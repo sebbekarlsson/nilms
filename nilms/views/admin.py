@@ -81,6 +81,11 @@ def show_page(page_id):
             page.delete()
             return redirect('/admin/pages')
 
+        if page:
+            if request.form.get('delete-data'):
+                page.update(data={})
+                page = PageFacade.get(id=ObjectId(page_id))
+
         if request.form.get('submit'):
             name = request.form.get('page-name')
             template = request.form.get('page-template')

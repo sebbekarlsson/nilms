@@ -8,6 +8,7 @@
             <section class='from-right'>
                 {% if page %}
                     <input type='submit' name='delete' class='btn' value='Delete'/>
+                    <input type='submit' name='delete-data' class='btn' value='Clear Data ({{ page.data.keys() | length }})'/>
                     <a href='/{{ page.name }}' class='btn btn-primary'>Edit on site</a>
                 {% endif %}
                 <input type='submit' name='submit' class='btn btn-ok' value='Save Changes'/>
