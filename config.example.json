@@ -3,6 +3,7 @@
     "password": "bad_password",
     "theme_dir": "/path/to/theme",
     "uploads_dir": "/tmp/uploads",
+    "env": "dev",
     "mongo": {
         "db": "nilms",
         "host": "localhost",

@@ -1,0 +1,9 @@
+[Unit]
+Description=uWSGI instance to serve nilms
+
+[Service]
+User=www-data
+ExecStart=/bin/bash -c 'cd /var/www/nilms/nilms; uwsgi --ini nilms.ini 2>&1'
+
+[Install]
+WantedBy=multi-user.target

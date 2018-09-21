@@ -9,9 +9,11 @@
         type='text/css'
         href='{{ url_for('static', filename='css/style.css') }}'/>
 
-        {% assets "js_all" %}
-            <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-        {% endassets %}
+        {% if config['env'] == 'dev' %}
+            {% include 'components/assets.html' %} 
+        {% else %}
+            <script type='text/javascript' src='{{ url_for('static', filename='js/packed.js') }}'></script>
+        {% endif %}
 
         <meta charset='UTF-8'/>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
