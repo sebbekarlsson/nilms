@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, request
 from bson.objectid import ObjectId
+import datetime
 from nilms.session_utils import login_required, get_current_user
 from nilms.asset_utils import upload_file
 from nilms.theme_utils import (
@@ -187,6 +188,7 @@ def show_post(post_id):
                     template=template,
                     kind=post_kind,
                     is_published=is_published,
+                    created_at=datetime.datetime.now(),
                     assets=new_assets
                 )
                 return redirect('/admin/post/{}'.format(str(post.id)))
